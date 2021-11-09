@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "pepro",
+  "version": "${version}",
+  "name": "Pepro",
+  "description": "General utilities provided you by GHF Studios",
+  "authors": [
+    "Leslie110501"
+  ],
+  "contact": {
+    "website": "http://lauchsreborn.net"
+  },
+  "license": "GPL-3.0",
+  "icon": "assets/pepro/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "net.ghfstudios.pepro.client.PeproClient"
+    ],
+    "main": [
+      "net.ghfstudios.pepro.Pepro"
+    ]
+  },
+  "mixins": [
+    "pepro.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.12.5",
+    "fabric": "*",
+    "minecraft": "1.17.1"
+  }
+}

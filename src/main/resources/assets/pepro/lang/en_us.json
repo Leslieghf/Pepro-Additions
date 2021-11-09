@@ -1,0 +1,24 @@
+{
+  "block.pepro.dev_measure_generic": "Generic Dev Measure",
+  "block.pepro.amethyst_ore": "Amethyst Ore",
+  "block.pepro.aquamarine_ore": "Aquamarine Ore",
+  "block.pepro.citrine_ore": "Citrine Ore",
+  "block.pepro.garnet_ore": "Garnet Ore",
+  "block.pepro.opal_ore": "Opal Ore",
+  "block.pepro.peridot_ore": "Peridot Ore",
+  "block.pepro.ruby_ore": "Ruby Ore",
+  "block.pepro.sapphire_ore": "Sapphire Ore",
+  "block.pepro.topaz_ore": "Topaz Ore",
+  "block.pepro.zircon_ore": "Zircon Ore",
+
+  "item.pepro.amethyst": "Amethyst",
+  "item.pepro.aquamarine": "Aquamarine",
+  "item.pepro.citrine": "Citrine",
+  "item.pepro.garnet": "Garnet",
+  "item.pepro.opal": "Opal",
+  "item.pepro.peridot": "Peridot",
+  "item.pepro.ruby": "Ruby",
+  "item.pepro.sapphire": "Sapphire",
+  "item.pepro.topaz": "Topaz",
+  "item.pepro.zircon": "Zircon"
+}

@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "values": [
+    "pepro:dev_measure_generic",
+    "pepro:amethyst_ore",
+    "pepro:aquamarine_ore",
+    "pepro:citrine_ore",
+    "pepro:garnet_ore",
+    "pepro:opal_ore",
+    "pepro:peridot_ore",
+    "pepro:ruby_ore",
+    "pepro:sapphire_ore",
+    "pepro:topaz_ore",
+    "pepro:zircon_ore"
+  ]
+}

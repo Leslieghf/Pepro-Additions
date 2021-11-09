@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "pepro:block/dev_measure_generic_top",
+    "side": "pepro:block/dev_measure_generic"
+  }
+}
