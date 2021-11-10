@@ -6,12 +6,6 @@ import net.minecraft.sound.BlockSoundGroup;
 
 public class PeproDevBlock extends PeproBlock{
     public PeproDevBlock(FabricBlockSettings settings) {
-        //////WARNING: "settings" IS OVERWRITTEN HERE//////
-        super(settings
-                .strength(2f)
-                .breakByTool(FabricToolTags.PICKAXES, 0)
-                .requiresTool()
-                .sounds(BlockSoundGroup.STONE)
-        );
+        super(settings);
     }
 }
