@@ -20,28 +20,21 @@ public class PeproOreBlock extends PeproBlock {
 
 
     public PeproOreBlock(FabricBlockSettings settings) {
-        this(settings,1 , UniformIntProvider.create(0, 0), true);
+        this(settings,1 , UniformIntProvider.create(0, 0));
     }
 
-    public PeproOreBlock(FabricBlockSettings settings, boolean overrideDefaultSettings) {
-        this(settings,1 , UniformIntProvider.create(0, 0), overrideDefaultSettings);
+    public PeproOreBlock(FabricBlockSettings settings, int xp_multiplier) {
+        this(settings, xp_multiplier, UniformIntProvider.create(0, 0));
     }
 
-    public PeproOreBlock(FabricBlockSettings settings, int xp_multiplier, boolean overrideDefaultSettings) {
-        this(settings, xp_multiplier, UniformIntProvider.create(0, 0), overrideDefaultSettings);
-    }
-
-    public PeproOreBlock(FabricBlockSettings settings, int xp_multiplier, UniformIntProvider uniformIntProvider, boolean overrideDefaultSettings) {
-        super(settings);
+    public PeproOreBlock(FabricBlockSettings settings, int xp_multiplier, UniformIntProvider uniformIntProvider) {
+        super(settings
+                .strength(2f)
+                .breakByTool(FabricToolTags.PICKAXES, 2)
+                .requiresTool()
+                .sounds(BlockSoundGroup.AMETHYST_BLOCK));
         this.xp_multiplier = xp_multiplier;
         this.experienceDropped = uniformIntProvider;
-        if (!overrideDefaultSettings) {
-            this.settings = settings
-                    .strength(2f)
-                    .breakByTool(FabricToolTags.PICKAXES, 2)
-                    .requiresTool()
-                    .sounds(BlockSoundGroup.AMETHYST_BLOCK);
-        }
     }
 
     @SuppressWarnings("deprecation")
