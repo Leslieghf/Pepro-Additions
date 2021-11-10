@@ -15,9 +15,9 @@ import net.minecraft.util.math.intprovider.UniformIntProvider;
 
 @SuppressWarnings("unused")
 public class PeproOreBlock extends PeproBlock {
+
     private final UniformIntProvider experienceDropped;
     private final int xp_multiplier;
-
 
     public PeproOreBlock(FabricBlockSettings settings) {
         this(settings,1 , UniformIntProvider.create(0, 0));
