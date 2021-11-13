@@ -44,7 +44,6 @@ public class PeproBlocks {
     public static final PeproBlock CARBON_ORE;
     public static final PeproBlock CHROMIUM_ORE;
     public static final PeproBlock COBALT_ORE;
-    public static final PeproBlock COPPER_ORE;
     public static final PeproBlock GERMANIUM_ORE;
     public static final PeproBlock LEAD_ORE;
     public static final PeproBlock LITHIUM_ORE;
@@ -75,7 +74,6 @@ public class PeproBlocks {
     public static final PeproBlock DEEPSLATE_CARBON_ORE;
     public static final PeproBlock DEEPSLATE_CHROMIUM_ORE;
     public static final PeproBlock DEEPSLATE_COBALT_ORE;
-    public static final PeproBlock DEEPSLATE_COPPER_ORE;
     public static final PeproBlock DEEPSLATE_GERMANIUM_ORE;
     public static final PeproBlock DEEPSLATE_LEAD_ORE;
     public static final PeproBlock DEEPSLATE_LITHIUM_ORE;
@@ -106,7 +104,6 @@ public class PeproBlocks {
     public static final PeproBlock CARBON_BLOCK;
     public static final PeproBlock CHROMIUM_BLOCK;
     public static final PeproBlock COBALT_BLOCK;
-    public static final PeproBlock COPPER_BLOCK;
     public static final PeproBlock GERMANIUM_BLOCK;
     public static final PeproBlock LEAD_BLOCK;
     public static final PeproBlock LITHIUM_BLOCK;
@@ -185,7 +182,6 @@ public class PeproBlocks {
         CARBON_ORE = register( "carbon_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(3, 7)));
         CHROMIUM_ORE = register( "chromium_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(3, 7)));
         COBALT_ORE = register( "cobalt_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(3, 7)));
-        COPPER_ORE = register( "copper_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(3, 7)));
         GERMANIUM_ORE = register( "germanium_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(3, 7)));
         LEAD_ORE = register( "lead_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(3, 7)));
         LITHIUM_ORE = register( "lithium_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(3, 7)));
@@ -216,7 +212,6 @@ public class PeproBlocks {
         DEEPSLATE_CARBON_ORE = register( "deepslate_carbon_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3.0f), UniformIntProvider.create(3, 7)));
         DEEPSLATE_CHROMIUM_ORE = register( "deepslate_chromium_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3.0f), UniformIntProvider.create(3, 7)));
         DEEPSLATE_COBALT_ORE = register( "deepslate_cobalt_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3.0f), UniformIntProvider.create(3, 7)));
-        DEEPSLATE_COPPER_ORE = register( "deepslate_copper_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3.0f), UniformIntProvider.create(3, 7)));
         DEEPSLATE_GERMANIUM_ORE = register( "deepslate_germanium_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3.0f), UniformIntProvider.create(3, 7)));
         DEEPSLATE_LEAD_ORE = register( "deepslate_lead_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3.0f), UniformIntProvider.create(3, 7)));
         DEEPSLATE_LITHIUM_ORE = register( "deepslate_lithium_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3.0f), UniformIntProvider.create(3, 7)));
@@ -247,12 +242,11 @@ public class PeproBlocks {
         CARBON_BLOCK = register( "carbon_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
         CHROMIUM_BLOCK = register( "chromium_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
         COBALT_BLOCK = register( "cobalt_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
-        COPPER_BLOCK = register( "copper_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
         GERMANIUM_BLOCK = register( "germanium_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
         LEAD_BLOCK = register( "lead_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
         LITHIUM_BLOCK = register( "lithium_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
         MANGANESE_BLOCK = register( "manganese_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
-        MAGNESIUM_BLOCK = register( "magnesium_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
+        MAGNESIUM_BLOCK = register( "magnesium_block", new MagnesiumBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
         MERCURY_BLOCK = register( "mercury_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
         MOLYBDENUM_BLOCK = register( "molybdenum_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
         NICKEL_BLOCK = register( "nickel_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));

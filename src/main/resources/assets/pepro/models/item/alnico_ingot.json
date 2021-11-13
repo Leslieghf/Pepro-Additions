@@ -1,7 +1,6 @@
 {
-  "variants": {
-    "": {
-      "model": "pepro:block/amethyst_ore"
-    }
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "pepro:item/alnico_ingot"
   }
 }

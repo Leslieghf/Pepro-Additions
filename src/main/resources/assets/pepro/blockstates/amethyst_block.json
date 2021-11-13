@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "pepro:block/amethyst_ore"
+  "variants": {
+    "": {
+      "model": "pepro:block/amethyst_block"
+    }
   }
 }

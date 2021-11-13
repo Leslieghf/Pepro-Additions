@@ -1,7 +1,7 @@
-{
+chromium_block{
   "variants": {
     "": {
-      "model": "pepro:block/amethyst_ore"
+      "model": "pepro:block/chromium_block"
     }
   }
 }

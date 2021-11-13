@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "pepro:block/topaz_ore"
+    "all": "pepro:block/topaz_block
   }
 }

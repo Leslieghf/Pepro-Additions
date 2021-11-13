@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "pepro:item/citrine"
+    "layer0": "pepro:item/small_crystal_matrix"
   }
 }

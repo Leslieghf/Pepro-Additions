@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "pepro:block/amethyst_ore"
+      "model": "pepro:block/deepslate_zinc_ore"
     }
   }
 }

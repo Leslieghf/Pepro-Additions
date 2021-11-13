@@ -46,7 +46,6 @@ public class PeproItems {
     public static final BlockItem CARBON_ORE;
     public static final BlockItem CHROMIUM_ORE;
     public static final BlockItem COBALT_ORE;
-    public static final BlockItem COPPER_ORE;
     public static final BlockItem GERMANIUM_ORE;
     public static final BlockItem LEAD_ORE;
     public static final BlockItem LITHIUM_ORE;
@@ -77,7 +76,6 @@ public class PeproItems {
     public static final BlockItem DEEPSLATE_CARBON_ORE;
     public static final BlockItem DEEPSLATE_CHROMIUM_ORE;
     public static final BlockItem DEEPSLATE_COBALT_ORE;
-    public static final BlockItem DEEPSLATE_COPPER_ORE;
     public static final BlockItem DEEPSLATE_GERMANIUM_ORE;
     public static final BlockItem DEEPSLATE_LEAD_ORE;
     public static final BlockItem DEEPSLATE_LITHIUM_ORE;
@@ -108,7 +106,6 @@ public class PeproItems {
     public static final BlockItem CARBON_BLOCK;
     public static final BlockItem CHROMIUM_BLOCK;
     public static final BlockItem COBALT_BLOCK;
-    public static final BlockItem COPPER_BLOCK;
     public static final BlockItem GERMANIUM_BLOCK;
     public static final BlockItem LEAD_BLOCK;
     public static final BlockItem LITHIUM_BLOCK;
@@ -169,7 +166,6 @@ public class PeproItems {
     public static final PeproItem RAW_CARBON;
     public static final PeproItem RAW_CHROMIUM;
     public static final PeproItem RAW_COBALT;
-    public static final PeproItem RAW_COPPER;
     public static final PeproItem RAW_GERMANIUM;
     public static final PeproItem RAW_LEAD;
     public static final PeproItem RAW_LITHIUM;
@@ -191,6 +187,9 @@ public class PeproItems {
     public static final PeproItem RAW_SULFUR;
     public static final PeproItem RAW_VANADIUM;
     public static final PeproItem RAW_ZINC;
+
+    //INGOTS
+
 
     public static final PeproItem AMALGAM_INGOT;
     public static final PeproItem ALNICO_INGOT;
@@ -281,7 +280,6 @@ public class PeproItems {
         CARBON_ORE = register(PeproBlocks.CARBON_ORE, ItemGroup.BUILDING_BLOCKS);
         CHROMIUM_ORE = register(PeproBlocks.CHROMIUM_ORE, ItemGroup.BUILDING_BLOCKS);
         COBALT_ORE = register(PeproBlocks.COBALT_ORE, ItemGroup.BUILDING_BLOCKS);
-        COPPER_ORE = register(PeproBlocks.COPPER_ORE, ItemGroup.BUILDING_BLOCKS);
         GERMANIUM_ORE = register(PeproBlocks.GERMANIUM_ORE, ItemGroup.BUILDING_BLOCKS);
         LEAD_ORE = register(PeproBlocks.LEAD_ORE, ItemGroup.BUILDING_BLOCKS);
         LITHIUM_ORE = register(PeproBlocks.LITHIUM_ORE, ItemGroup.BUILDING_BLOCKS);
@@ -312,7 +310,6 @@ public class PeproItems {
         DEEPSLATE_CARBON_ORE = register(PeproBlocks.DEEPSLATE_CARBON_ORE, ItemGroup.BUILDING_BLOCKS);
         DEEPSLATE_CHROMIUM_ORE = register(PeproBlocks.DEEPSLATE_CHROMIUM_ORE, ItemGroup.BUILDING_BLOCKS);
         DEEPSLATE_COBALT_ORE = register(PeproBlocks.DEEPSLATE_COBALT_ORE, ItemGroup.BUILDING_BLOCKS);
-        DEEPSLATE_COPPER_ORE = register(PeproBlocks.DEEPSLATE_COPPER_ORE, ItemGroup.BUILDING_BLOCKS);
         DEEPSLATE_GERMANIUM_ORE = register(PeproBlocks.DEEPSLATE_GERMANIUM_ORE, ItemGroup.BUILDING_BLOCKS);
         DEEPSLATE_LEAD_ORE = register(PeproBlocks.DEEPSLATE_LEAD_ORE, ItemGroup.BUILDING_BLOCKS);
         DEEPSLATE_LITHIUM_ORE = register(PeproBlocks.DEEPSLATE_LITHIUM_ORE, ItemGroup.BUILDING_BLOCKS);
@@ -343,7 +340,6 @@ public class PeproItems {
         CARBON_BLOCK = register(PeproBlocks.CARBON_BLOCK, ItemGroup.BUILDING_BLOCKS);
         CHROMIUM_BLOCK = register(PeproBlocks.CHROMIUM_BLOCK, ItemGroup.BUILDING_BLOCKS);
         COBALT_BLOCK = register(PeproBlocks.COBALT_BLOCK, ItemGroup.BUILDING_BLOCKS);
-        COPPER_BLOCK = register(PeproBlocks.COPPER_BLOCK, ItemGroup.BUILDING_BLOCKS);
         GERMANIUM_BLOCK = register(PeproBlocks.GERMANIUM_BLOCK, ItemGroup.BUILDING_BLOCKS);
         LEAD_BLOCK = register(PeproBlocks.LEAD_BLOCK, ItemGroup.BUILDING_BLOCKS);
         LITHIUM_BLOCK = register(PeproBlocks.LITHIUM_BLOCK, ItemGroup.BUILDING_BLOCKS);
@@ -404,7 +400,6 @@ public class PeproItems {
         RAW_CARBON = register("raw_carbon", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
         RAW_CHROMIUM = register("raw_chromium", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
         RAW_COBALT = register("raw_cobalt", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
-        RAW_COPPER = register("raw_copper", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
         RAW_GERMANIUM = register("raw_germanium", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
         RAW_LEAD = register("raw_lead", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
         RAW_LITHIUM = register("raw_lithium", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));

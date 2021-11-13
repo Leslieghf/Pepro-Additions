@@ -1,7 +1,6 @@
-{
-  "variants": {
-    "": {
-      "model": "pepro:block/amethyst_ore"
-    }
+chromium_block{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "pepro:block/chromium_block
   }
 }

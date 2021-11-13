@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "pepro:block/peridot_ore"
+    "all": "pepro:block/peridot_block
   }
 }

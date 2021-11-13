@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "pepro:block/garnet_ore"
+    "all": "pepro:block/garnet_block
   }
-}}
+}

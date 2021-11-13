@@ -1,7 +1,6 @@
 {
-  "variants": {
-    "": {
-      "model": "pepro:block/amethyst_ore"
-    }
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "pepro:block/deepslate_manganese_ore
   }
 }

@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "minecraft:block/amethyst_cluster"
-  }
+  "parent": "pepro:block/low_temperature_diamond_cluster"
 }

@@ -1,5 +1,7 @@
 {
-  "parent": "minecraft:block/cross",
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "minecraft:block/cross",
   "textures": {
     "cross": "minecraft:block/amethyst_cluster"
   }

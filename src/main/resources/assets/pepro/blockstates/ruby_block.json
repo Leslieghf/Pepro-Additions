@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "pepro:block/ruby_ore"
+  "variants": {
+    "": {
+      "model": "pepro:block/ruby_block"
+    }
   }
 }

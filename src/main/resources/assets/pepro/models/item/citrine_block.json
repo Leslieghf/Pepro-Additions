@@ -1,6 +1,3 @@
 {
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "pepro:block/citrine_ore"
-  }
+  "parent": "pepro:block/citrine_block"
 }
