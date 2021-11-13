@@ -42,7 +42,6 @@ public class PeproBlocks {
     public static final PeproBlock BORON_ORE;
     public static final PeproBlock CADMIUM_ORE;
     public static final PeproBlock CARBON_ORE;
-    public static final PeproBlock MOLYBDENUM_ORE;
     public static final PeproBlock CHROMIUM_ORE;
     public static final PeproBlock COBALT_ORE;
     public static final PeproBlock COPPER_ORE;
@@ -52,6 +51,7 @@ public class PeproBlocks {
     public static final PeproBlock MANGANESE_ORE;
     public static final PeproBlock MAGNESIUM_ORE;
     public static final PeproBlock MERCURY_ORE;
+    public static final PeproBlock MOLYBDENUM_ORE;
     public static final PeproBlock NICKEL_ORE;
     public static final PeproBlock NIOBIUM_ORE;
     public static final PeproBlock TIN_ORE;
@@ -73,7 +73,6 @@ public class PeproBlocks {
     public static final PeproBlock DEEPSLATE_BORON_ORE;
     public static final PeproBlock DEEPSLATE_CADMIUM_ORE;
     public static final PeproBlock DEEPSLATE_CARBON_ORE;
-    public static final PeproBlock DEEPSLATE_MOLYBDENUM_ORE;
     public static final PeproBlock DEEPSLATE_CHROMIUM_ORE;
     public static final PeproBlock DEEPSLATE_COBALT_ORE;
     public static final PeproBlock DEEPSLATE_COPPER_ORE;
@@ -83,6 +82,7 @@ public class PeproBlocks {
     public static final PeproBlock DEEPSLATE_MANGANESE_ORE;
     public static final PeproBlock DEEPSLATE_MAGNESIUM_ORE;
     public static final PeproBlock DEEPSLATE_MERCURY_ORE;
+    public static final PeproBlock DEEPSLATE_MOLYBDENUM_ORE;
     public static final PeproBlock DEEPSLATE_NICKEL_ORE;
     public static final PeproBlock DEEPSLATE_NIOBIUM_ORE;
     public static final PeproBlock DEEPSLATE_TIN_ORE;
@@ -104,7 +104,6 @@ public class PeproBlocks {
     public static final PeproBlock BORON_BLOCK;
     public static final PeproBlock CADMIUM_BLOCK;
     public static final PeproBlock CARBON_BLOCK;
-    public static final PeproBlock MOLYBDENUM_BLOCK;
     public static final PeproBlock CHROMIUM_BLOCK;
     public static final PeproBlock COBALT_BLOCK;
     public static final PeproBlock COPPER_BLOCK;
@@ -114,6 +113,7 @@ public class PeproBlocks {
     public static final PeproBlock MANGANESE_BLOCK;
     public static final PeproBlock MAGNESIUM_BLOCK;
     public static final PeproBlock MERCURY_BLOCK;
+    public static final PeproBlock MOLYBDENUM_BLOCK;
     public static final PeproBlock NICKEL_BLOCK;
     public static final PeproBlock NIOBIUM_BLOCK;
     public static final PeproBlock TIN_BLOCK;
@@ -183,7 +183,6 @@ public class PeproBlocks {
         BORON_ORE = register( "boron_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(3, 7)));
         CADMIUM_ORE = register( "cadmium_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(3, 7)));
         CARBON_ORE = register( "carbon_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(3, 7)));
-        MOLYBDENUM_ORE = register( "molybdenum_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(3, 7)));
         CHROMIUM_ORE = register( "chromium_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(3, 7)));
         COBALT_ORE = register( "cobalt_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(3, 7)));
         COPPER_ORE = register( "copper_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(3, 7)));
@@ -194,6 +193,7 @@ public class PeproBlocks {
         MAGNESIUM_ORE = register( "magnesium_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(3, 7)));
         MERCURY_ORE = register( "mercury_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(3, 7)));
         NICKEL_ORE = register( "nickel_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(3, 7)));
+        MOLYBDENUM_ORE = register( "molybdenum_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(3, 7)));
         NIOBIUM_ORE = register( "niobium_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(3, 7)));
         TIN_ORE = register( "tin_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(3, 7)));
         TITANIUM_ORE = register( "titanium_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(3.0f, 3.0f), UniformIntProvider.create(3, 7)));
@@ -214,7 +214,6 @@ public class PeproBlocks {
         DEEPSLATE_BORON_ORE = register( "deepslate_boron_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3.0f), UniformIntProvider.create(3, 7)));
         DEEPSLATE_CADMIUM_ORE = register( "deepslate_cadmium_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3.0f), UniformIntProvider.create(3, 7)));
         DEEPSLATE_CARBON_ORE = register( "deepslate_carbon_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3.0f), UniformIntProvider.create(3, 7)));
-        DEEPSLATE_MOLYBDENUM_ORE = register( "deepslate_molybdenum_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3.0f), UniformIntProvider.create(3, 7)));
         DEEPSLATE_CHROMIUM_ORE = register( "deepslate_chromium_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3.0f), UniformIntProvider.create(3, 7)));
         DEEPSLATE_COBALT_ORE = register( "deepslate_cobalt_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3.0f), UniformIntProvider.create(3, 7)));
         DEEPSLATE_COPPER_ORE = register( "deepslate_copper_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3.0f), UniformIntProvider.create(3, 7)));
@@ -224,6 +223,7 @@ public class PeproBlocks {
         DEEPSLATE_MANGANESE_ORE = register( "deepslate_manganese_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3.0f), UniformIntProvider.create(3, 7)));
         DEEPSLATE_MAGNESIUM_ORE = register( "deepslate_magnesium_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3.0f), UniformIntProvider.create(3, 7)));
         DEEPSLATE_MERCURY_ORE = register( "deepslate_mercury_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3.0f), UniformIntProvider.create(3, 7)));
+        DEEPSLATE_MOLYBDENUM_ORE = register( "deepslate_molybdenum_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3.0f), UniformIntProvider.create(3, 7)));
         DEEPSLATE_NICKEL_ORE = register( "deepslate_nickel_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3.0f), UniformIntProvider.create(3, 7)));
         DEEPSLATE_NIOBIUM_ORE = register( "deepslate_niobium_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3.0f), UniformIntProvider.create(3, 7)));
         DEEPSLATE_TIN_ORE = register( "deepslate_tin_ore", new PeproOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3.0f), UniformIntProvider.create(3, 7)));
@@ -245,7 +245,6 @@ public class PeproBlocks {
         BORON_BLOCK = register( "boron_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
         CADMIUM_BLOCK = register( "cadmium_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
         CARBON_BLOCK = register( "carbon_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
-        MOLYBDENUM_BLOCK = register( "molybdenum_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
         CHROMIUM_BLOCK = register( "chromium_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
         COBALT_BLOCK = register( "cobalt_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
         COPPER_BLOCK = register( "copper_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
@@ -255,6 +254,7 @@ public class PeproBlocks {
         MANGANESE_BLOCK = register( "manganese_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
         MAGNESIUM_BLOCK = register( "magnesium_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
         MERCURY_BLOCK = register( "mercury_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
+        MOLYBDENUM_BLOCK = register( "molybdenum_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
         NICKEL_BLOCK = register( "nickel_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
         NIOBIUM_BLOCK = register( "niobium_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
         TIN_BLOCK = register( "tin_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
