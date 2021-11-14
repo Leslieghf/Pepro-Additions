@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "pepro:block/small_zircon_bud",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "pepro:block/small_zircon_bud",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "pepro:block/small_zircon_bud",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "pepro:block/small_zircon_bud",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "pepro:block/small_zircon_bud"
+    },
+    "facing=west": {
+      "model": "pepro:block/small_zircon_bud",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

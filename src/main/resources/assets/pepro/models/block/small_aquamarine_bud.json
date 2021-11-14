@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "pepro:block/small_aquamarine_bud"
+  }
+}
