@@ -32,6 +32,7 @@ public class MagnesiumBlock extends PeproBlock{
     public MagnesiumBlock(FabricBlockSettings settings, float explosionPower) {
         super(settings);
         MagnesiumBlock.explosionPower = explosionPower;
+
     }
 
     public MagnesiumBlock(FabricBlockSettings settings) {

@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "minecraft:block/budding_aquamarine"
+      "model": "pepro:block/budding_aquamarine"
     }
   }
 }

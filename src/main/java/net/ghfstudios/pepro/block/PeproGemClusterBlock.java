@@ -1,8 +1,10 @@
 package net.ghfstudios.pepro.block;
 
+import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.*;
 import net.minecraft.block.piston.PistonBehavior;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.fluid.FluidState;
@@ -52,10 +54,12 @@ public class PeproGemClusterBlock extends PeproGemBlock implements Waterloggable
 
     public PeproGemClusterBlock(int i, int j, FabricBlockSettings settings) {
         this(i, j, settings, UniformIntProvider.create(0, 0));
+        BlockRenderLayerMap.INSTANCE.putBlock(this, RenderLayer.getCutout());
     }
 
     public PeproGemClusterBlock(int i, int j, FabricBlockSettings settings, UniformIntProvider uniformIntProvider) {
         super(settings);
+        BlockRenderLayerMap.INSTANCE.putBlock(this, RenderLayer.getCutout());
         this.experienceDropped = uniformIntProvider;
 
         this.setDefaultState((BlockState)((BlockState)this.getDefaultState().with(WATERLOGGED, false)).with(FACING, Direction.UP));

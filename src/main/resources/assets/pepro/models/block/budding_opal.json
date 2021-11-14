@@ -1,6 +1,6 @@
 {
-  "parent": "minecraft:block/cross",
+  "parent": "minecraft:block/cube_all",
   "textures": {
-    "cross": "pepro:block/budding_opal"
+    "all": "pepro:block/budding_opal"
   }
 }

@@ -1,6 +1,6 @@
 {
-  "parent": "item/generated",
+  "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "pepro:item/aquamarine_cluster"
+    "layer0": "pepro:block/aquamarine_cluster"
   }
 }

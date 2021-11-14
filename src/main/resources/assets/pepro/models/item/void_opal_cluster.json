@@ -1,3 +1,6 @@
 {
-  "parent": "pepro:block/void_opal_cluster"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "pepro:block/void_opal_cluster"
+  }
 }

@@ -1,3 +1,6 @@
 {
-  "parent": "pepro:block/low_temperature_diamond_cluster"
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "pepro:block/low_temperature_diamond_cluster"
+  }
 }
