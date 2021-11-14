@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "pepro:block/amethyst_ore
+    "all": "pepro:block/palladium_ore"
   }
 }

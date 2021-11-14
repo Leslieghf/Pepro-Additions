@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "pepro:block/molybdenum_block
+    "all": "pepro:block/molybdenum_block"
   }
 }

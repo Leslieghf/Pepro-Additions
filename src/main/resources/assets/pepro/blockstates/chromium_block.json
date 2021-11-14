@@ -1,4 +1,4 @@
-chromium_block{
+{
   "variants": {
     "": {
       "model": "pepro:block/chromium_block"

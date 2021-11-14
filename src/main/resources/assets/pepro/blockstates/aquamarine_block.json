@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "pepro:block/aquamarine_block"
+  "variants": {
+    "": {
+      "model": "pepro:block/aquamarine_block"
+    }
   }
 }

@@ -1,8 +1,6 @@
 {
-  "parent": "minecraft:block/cube_all",
+  "parent": "minecraft:block/cross",
   "textures": {
-    "all": "minecraft:block/cross",
-  "textures": {
-    "cross": "minecraft:block/amethyst_cluster"
+    "cross": "pepro:block/low_temperature_diamond_cluster"
   }
 }

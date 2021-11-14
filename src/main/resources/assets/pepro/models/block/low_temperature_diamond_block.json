@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "pepro:block/low_temperature_diamond_block
+    "all": "pepro:block/low_temperature_diamond_block"
   }
 }

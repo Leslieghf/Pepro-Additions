@@ -1,6 +1,6 @@
-chromium_block{
+{
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "pepro:block/chromium_block
+    "all": "pepro:block/chromium_block"
   }
 }

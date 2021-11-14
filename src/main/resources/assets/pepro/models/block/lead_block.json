@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "pepro:block/lead_block
+    "all": "pepro:block/lead_block"
   }
 }

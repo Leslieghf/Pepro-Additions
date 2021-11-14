@@ -1,6 +1,30 @@
 {
-  "parent": "minecraft:block/cross",
-  "textures": {
-    "cross": "minecraft:block/amethyst_cluster"
+  "variants": {
+    "facing=down": {
+      "model": "pepro:block/low_temperature_diamond_cluster",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "pepro:block/low_temperature_diamond_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "pepro:block/low_temperature_diamond_cluster",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "pepro:block/low_temperature_diamond_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "pepro:block/low_temperature_diamond_cluster"
+    },
+    "facing=west": {
+      "model": "pepro:block/low_temperature_diamond_cluster",
+      "x": 90,
+      "y": 270
+    }
   }
 }

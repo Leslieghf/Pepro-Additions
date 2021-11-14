@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "pepro:block/aluminium_block
+    "all": "pepro:block/aluminium_block"
   }
 }

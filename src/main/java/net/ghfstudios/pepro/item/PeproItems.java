@@ -3,7 +3,8 @@ package net.ghfstudios.pepro.item;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.ghfstudios.pepro.block.PeproBlock;
 import net.ghfstudios.pepro.block.PeproBlocks;
-import net.minecraft.item.*;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -35,9 +36,60 @@ public class PeproItems {
     public static final BlockItem DEEPSLATE_TOPAZ_ORE;
     public static final BlockItem DEEPSLATE_ZIRCON_ORE;
 
+    public static final BlockItem AQUAMARINE_CLUSTER;
+    public static final BlockItem CITRINE_CLUSTER;
+    public static final BlockItem GARNET_CLUSTER;
+    public static final BlockItem OPAL_CLUSTER;
+    public static final BlockItem PERIDOT_CLUSTER;
+    public static final BlockItem RUBY_CLUSTER;
+    public static final BlockItem SAPPHIRE_CLUSTER;
+    public static final BlockItem TOPAZ_CLUSTER;
+    public static final BlockItem ZIRCON_CLUSTER;
+
     public static final BlockItem VOID_OPAL_CLUSTER;
     public static final BlockItem LOW_TEMPERATURE_DIAMOND_CLUSTER;
-    
+
+    public static final BlockItem BUDDING_AQUAMARINE;
+    public static final BlockItem BUDDING_CITRINE;
+    public static final BlockItem BUDDING_GARNET;
+    public static final BlockItem BUDDING_OPAL;
+    public static final BlockItem BUDDING_PERIDOT;
+    public static final BlockItem BUDDING_RUBY;
+    public static final BlockItem BUDDING_SAPPHIRE;
+    public static final BlockItem BUDDING_TOPAZ;
+    public static final BlockItem BUDDING_ZIRCON;
+
+    public static final BlockItem SMALL_AQUAMARINE_BUD;
+    public static final BlockItem SMALL_CITRINE_BUD;
+    public static final BlockItem SMALL_GARNET_BUD;
+    public static final BlockItem SMALL_OPAL_BUD;
+    public static final BlockItem SMALL_PERIDOT_BUD;
+    public static final BlockItem SMALL_RUBY_BUD;
+    public static final BlockItem SMALL_SAPPHIRE_BUD;
+    public static final BlockItem SMALL_TOPAZ_BUD;
+    public static final BlockItem SMALL_ZIRCON_BUD;
+
+    public static final BlockItem MEDIUM_AQUAMARINE_BUD;
+    public static final BlockItem MEDIUM_CITRINE_BUD;
+    public static final BlockItem MEDIUM_GARNET_BUD;
+    public static final BlockItem MEDIUM_OPAL_BUD;
+    public static final BlockItem MEDIUM_PERIDOT_BUD;
+    public static final BlockItem MEDIUM_RUBY_BUD;
+    public static final BlockItem MEDIUM_SAPPHIRE_BUD;
+    public static final BlockItem MEDIUM_TOPAZ_BUD;
+    public static final BlockItem MEDIUM_ZIRCON_BUD;
+
+    public static final BlockItem LARGE_AQUAMARINE_BUD;
+    public static final BlockItem LARGE_CITRINE_BUD;
+    public static final BlockItem LARGE_GARNET_BUD;
+    public static final BlockItem LARGE_OPAL_BUD;
+    public static final BlockItem LARGE_PERIDOT_BUD;
+    public static final BlockItem LARGE_RUBY_BUD;
+    public static final BlockItem LARGE_SAPPHIRE_BUD;
+    public static final BlockItem LARGE_TOPAZ_BUD;
+    public static final BlockItem LARGE_ZIRCON_BUD;
+
+
     public static final BlockItem ALUMINIUM_ORE;
     public static final BlockItem ANTIMONY_ORE;
     public static final BlockItem BISMUTH_ORE;
@@ -128,7 +180,6 @@ public class PeproItems {
     public static final BlockItem VANADIUM_BLOCK;
     public static final BlockItem ZINC_BLOCK;
 
-    public static final BlockItem AMETHYST_BLOCK;
     public static final BlockItem AQUAMARINE_BLOCK;
     public static final BlockItem CITRINE_BLOCK;
     public static final BlockItem GARNET_BLOCK;
@@ -268,10 +319,62 @@ public class PeproItems {
         DEEPSLATE_SAPPHIRE_ORE = register(PeproBlocks.DEEPSLATE_SAPPHIRE_ORE, ItemGroup.BUILDING_BLOCKS);
         DEEPSLATE_TOPAZ_ORE = register(PeproBlocks.DEEPSLATE_TOPAZ_ORE, ItemGroup.BUILDING_BLOCKS);
         DEEPSLATE_ZIRCON_ORE = register(PeproBlocks.DEEPSLATE_ZIRCON_ORE, ItemGroup.BUILDING_BLOCKS);
-
+        
+        
+        AQUAMARINE_CLUSTER = register(PeproBlocks.AQUAMARINE_CLUSTER, ItemGroup.BUILDING_BLOCKS);
+        CITRINE_CLUSTER = register(PeproBlocks.CITRINE_CLUSTER, ItemGroup.BUILDING_BLOCKS);
+        GARNET_CLUSTER = register(PeproBlocks.GARNET_CLUSTER, ItemGroup.BUILDING_BLOCKS);
+        OPAL_CLUSTER = register(PeproBlocks.OPAL_CLUSTER, ItemGroup.BUILDING_BLOCKS);
+        PERIDOT_CLUSTER = register(PeproBlocks.PERIDOT_CLUSTER, ItemGroup.BUILDING_BLOCKS);
+        RUBY_CLUSTER = register(PeproBlocks.RUBY_CLUSTER, ItemGroup.BUILDING_BLOCKS);
+        SAPPHIRE_CLUSTER = register(PeproBlocks.SAPPHIRE_CLUSTER, ItemGroup.BUILDING_BLOCKS);
+        TOPAZ_CLUSTER = register(PeproBlocks.TOPAZ_CLUSTER, ItemGroup.BUILDING_BLOCKS);
+        ZIRCON_CLUSTER = register(PeproBlocks.ZIRCON_CLUSTER, ItemGroup.BUILDING_BLOCKS);
+        
         VOID_OPAL_CLUSTER = register(PeproBlocks.VOID_OPAL_CLUSTER, ItemGroup.BUILDING_BLOCKS);
         LOW_TEMPERATURE_DIAMOND_CLUSTER = register(PeproBlocks.LOW_TEMPERATURE_DIAMOND_CLUSTER, ItemGroup.BUILDING_BLOCKS);
+        
+        BUDDING_AQUAMARINE = register(PeproBlocks.BUDDING_AQUAMARINE, ItemGroup.BUILDING_BLOCKS);
+        BUDDING_CITRINE = register(PeproBlocks.BUDDING_CITRINE, ItemGroup.BUILDING_BLOCKS);
+        BUDDING_GARNET = register(PeproBlocks.BUDDING_GARNET, ItemGroup.BUILDING_BLOCKS);
+        BUDDING_OPAL = register(PeproBlocks.BUDDING_OPAL, ItemGroup.BUILDING_BLOCKS);
+        BUDDING_PERIDOT = register(PeproBlocks.BUDDING_PERIDOT, ItemGroup.BUILDING_BLOCKS);
+        BUDDING_RUBY = register(PeproBlocks.BUDDING_RUBY, ItemGroup.BUILDING_BLOCKS);
+        BUDDING_SAPPHIRE = register(PeproBlocks.BUDDING_SAPPHIRE, ItemGroup.BUILDING_BLOCKS);
+        BUDDING_TOPAZ = register(PeproBlocks.BUDDING_TOPAZ, ItemGroup.BUILDING_BLOCKS);
+        BUDDING_ZIRCON = register(PeproBlocks.BUDDING_ZIRCON, ItemGroup.BUILDING_BLOCKS);
 
+        SMALL_AQUAMARINE_BUD = register(PeproBlocks.SMALL_AQUAMARINE_BUD, ItemGroup.BUILDING_BLOCKS);
+        SMALL_CITRINE_BUD = register(PeproBlocks.SMALL_CITRINE_BUD, ItemGroup.BUILDING_BLOCKS);
+        SMALL_GARNET_BUD = register(PeproBlocks.SMALL_GARNET_BUD, ItemGroup.BUILDING_BLOCKS);
+        SMALL_OPAL_BUD = register(PeproBlocks.SMALL_OPAL_BUD, ItemGroup.BUILDING_BLOCKS);
+        SMALL_PERIDOT_BUD = register(PeproBlocks.SMALL_PERIDOT_BUD, ItemGroup.BUILDING_BLOCKS);
+        SMALL_RUBY_BUD = register(PeproBlocks.SMALL_RUBY_BUD, ItemGroup.BUILDING_BLOCKS);
+        SMALL_SAPPHIRE_BUD = register(PeproBlocks.SMALL_SAPPHIRE_BUD, ItemGroup.BUILDING_BLOCKS);
+        SMALL_TOPAZ_BUD = register(PeproBlocks.SMALL_TOPAZ_BUD, ItemGroup.BUILDING_BLOCKS);
+        SMALL_ZIRCON_BUD = register(PeproBlocks.SMALL_ZIRCON_BUD, ItemGroup.BUILDING_BLOCKS);
+
+        MEDIUM_AQUAMARINE_BUD = register(PeproBlocks.MEDIUM_AQUAMARINE_BUD, ItemGroup.BUILDING_BLOCKS);
+        MEDIUM_CITRINE_BUD = register(PeproBlocks.MEDIUM_CITRINE_BUD, ItemGroup.BUILDING_BLOCKS);
+        MEDIUM_GARNET_BUD = register(PeproBlocks.MEDIUM_GARNET_BUD, ItemGroup.BUILDING_BLOCKS);
+        MEDIUM_OPAL_BUD = register(PeproBlocks.MEDIUM_OPAL_BUD, ItemGroup.BUILDING_BLOCKS);
+        MEDIUM_PERIDOT_BUD = register(PeproBlocks.MEDIUM_PERIDOT_BUD, ItemGroup.BUILDING_BLOCKS);
+        MEDIUM_RUBY_BUD = register(PeproBlocks.MEDIUM_RUBY_BUD, ItemGroup.BUILDING_BLOCKS);
+        MEDIUM_SAPPHIRE_BUD = register(PeproBlocks.MEDIUM_SAPPHIRE_BUD, ItemGroup.BUILDING_BLOCKS);
+        MEDIUM_TOPAZ_BUD = register(PeproBlocks.MEDIUM_TOPAZ_BUD, ItemGroup.BUILDING_BLOCKS);
+        MEDIUM_ZIRCON_BUD = register(PeproBlocks.MEDIUM_ZIRCON_BUD, ItemGroup.BUILDING_BLOCKS);
+
+        LARGE_AQUAMARINE_BUD = register(PeproBlocks.LARGE_AQUAMARINE_BUD, ItemGroup.BUILDING_BLOCKS);
+        LARGE_CITRINE_BUD = register(PeproBlocks.LARGE_CITRINE_BUD, ItemGroup.BUILDING_BLOCKS);
+        LARGE_GARNET_BUD = register(PeproBlocks.LARGE_GARNET_BUD, ItemGroup.BUILDING_BLOCKS);
+        LARGE_OPAL_BUD = register(PeproBlocks.LARGE_OPAL_BUD, ItemGroup.BUILDING_BLOCKS);
+        LARGE_PERIDOT_BUD = register(PeproBlocks.LARGE_PERIDOT_BUD, ItemGroup.BUILDING_BLOCKS);
+        LARGE_RUBY_BUD = register(PeproBlocks.LARGE_RUBY_BUD, ItemGroup.BUILDING_BLOCKS);
+        LARGE_SAPPHIRE_BUD = register(PeproBlocks.LARGE_SAPPHIRE_BUD, ItemGroup.BUILDING_BLOCKS);
+        LARGE_TOPAZ_BUD = register(PeproBlocks.LARGE_TOPAZ_BUD, ItemGroup.BUILDING_BLOCKS);
+        LARGE_ZIRCON_BUD = register(PeproBlocks.LARGE_ZIRCON_BUD, ItemGroup.BUILDING_BLOCKS);
+
+        
         ALUMINIUM_ORE = register(PeproBlocks.ALUMINIUM_ORE, ItemGroup.BUILDING_BLOCKS);
         ANTIMONY_ORE = register(PeproBlocks.ANTIMONY_ORE, ItemGroup.BUILDING_BLOCKS);
         BISMUTH_ORE = register(PeproBlocks.BISMUTH_ORE, ItemGroup.BUILDING_BLOCKS);
@@ -362,7 +465,6 @@ public class PeproItems {
         VANADIUM_BLOCK = register(PeproBlocks.VANADIUM_BLOCK, ItemGroup.BUILDING_BLOCKS);
         ZINC_BLOCK = register(PeproBlocks.ZINC_BLOCK, ItemGroup.BUILDING_BLOCKS);
 
-        AMETHYST_BLOCK = register(PeproBlocks.AMETHYST_BLOCK, ItemGroup.BUILDING_BLOCKS);
         AQUAMARINE_BLOCK = register(PeproBlocks.AQUAMARINE_BLOCK, ItemGroup.BUILDING_BLOCKS);
         CITRINE_BLOCK = register(PeproBlocks.CITRINE_BLOCK, ItemGroup.BUILDING_BLOCKS);
         GARNET_BLOCK = register(PeproBlocks.GARNET_BLOCK, ItemGroup.BUILDING_BLOCKS);

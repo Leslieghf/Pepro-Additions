@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "pepro:block/manganese_block
+    "all": "pepro:block/manganese_block"
   }
 }

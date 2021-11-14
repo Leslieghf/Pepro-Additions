@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "pepro:block/carbon_ore
+    "all": "pepro:block/carbon_ore"
   }
 }

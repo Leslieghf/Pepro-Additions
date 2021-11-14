@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "pepro:block/deepslate_molybdenum_ore
+    "all": "pepro:block/deepslate_molybdenum_ore"
   }
 }
