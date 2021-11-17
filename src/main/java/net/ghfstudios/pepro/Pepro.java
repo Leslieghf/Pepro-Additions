@@ -23,7 +23,7 @@ public class Pepro implements ModInitializer {
         peproParticleTypes = new PeproParticleTypes();
         peproConfiguredFeatures = new PeproConfiguredFeatures();
 
-        ResourceBuilder resourceBuilder = new ResourceBuilder(ResourceBuilder.ResourceType.BLOCK_BLOCKSTATE);
-        resourceBuilder.CreateResource("block", "test_block", new Identifier("pepro", "block/test_block"));
+        //ResourceBuilder resourceBuilder = new ResourceBuilder(ResourceBuilder.ResourceType.BLOCK_BLOCKSTATE);
+        //resourceBuilder.CreateResource("block", "test_block", new Identifier("pepro", "block/test_block"));
     }
 }
