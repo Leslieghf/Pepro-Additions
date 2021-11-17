@@ -25,6 +25,10 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.function.Consumer;
 
+/**
+ * @author Leslie-John Richardson
+ */
+
 public class MagnesiumBlock extends PeproBlock{
     public static final BooleanProperty UNSTABLE;
     private static float explosionPower;

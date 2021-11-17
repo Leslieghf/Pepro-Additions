@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "pepro:item/dev_measure_generic"
+    "layer0": "MODID:PATH"
   }
 }
