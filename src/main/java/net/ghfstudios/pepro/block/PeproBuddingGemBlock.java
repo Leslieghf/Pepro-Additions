@@ -3,7 +3,10 @@ package net.ghfstudios.pepro.block;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.ghfstudios.pepro.util.PeproLogger;
 import net.ghfstudios.pepro.util.exception.PeproRuntimeException;
-import net.minecraft.block.*;
+import net.minecraft.block.AmethystClusterBlock;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.server.world.ServerWorld;
@@ -99,7 +102,7 @@ public class PeproBuddingGemBlock extends PeproGemBlock{
             }
 
             if (block != null) {
-                BlockState blockState2 = (BlockState)((BlockState)block.getDefaultState().with(AmethystClusterBlock.FACING, direction)).with(AmethystClusterBlock.WATERLOGGED, blockState.getFluidState().getFluid() == Fluids.WATER);
+                BlockState blockState2 = block.getDefaultState().with(AmethystClusterBlock.FACING, direction).with(AmethystClusterBlock.WATERLOGGED, blockState.getFluidState().getFluid() == Fluids.WATER);
                 world.setBlockState(blockPos, blockState2);
             }
 

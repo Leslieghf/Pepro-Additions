@@ -1,12 +1,10 @@
 package net.ghfstudios.pepro;
 
 import net.fabricmc.api.ModInitializer;
-import net.ghfstudios.mcjsonutils.ResourceBuilder;
 import net.ghfstudios.pepro.block.PeproBlocks;
 import net.ghfstudios.pepro.item.PeproItems;
 import net.ghfstudios.pepro.particle.PeproParticleTypes;
 import net.ghfstudios.pepro.world.gen.feature.PeproConfiguredFeatures;
-import net.minecraft.util.Identifier;
 
 public class Pepro implements ModInitializer {
 

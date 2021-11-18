@@ -62,18 +62,18 @@ public class PeproGemClusterBlock extends PeproGemBlock implements Waterloggable
         BlockRenderLayerMap.INSTANCE.putBlock(this, RenderLayer.getCutout());
         this.experienceDropped = uniformIntProvider;
 
-        this.setDefaultState((BlockState)((BlockState)this.getDefaultState().with(WATERLOGGED, false)).with(FACING, Direction.UP));
-        this.UP_SHAPE = Block.createCuboidShape((double)j, 0.0D, (double)j, (double)(16 - j), (double)i, (double)(16 - j));
-        this.DOWN_SHAPE = Block.createCuboidShape((double)j, (double)(16 - i), (double)j, (double)(16 - j), 16.0D, (double)(16 - j));
-        this.NORTH_SHAPE = Block.createCuboidShape((double)j, (double)j, (double)(16 - i), (double)(16 - j), (double)(16 - j), 16.0D);
-        this.SOUTH_SHAPE = Block.createCuboidShape((double)j, (double)j, 0.0D, (double)(16 - j), (double)(16 - j), (double)i);
-        this.EAST_SHAPE = Block.createCuboidShape(0.0D, (double)j, (double)j, (double)i, (double)(16 - j), (double)(16 - j));
-        this.WEST_SHAPE = Block.createCuboidShape((double)(16 - i), (double)j, (double)j, 16.0D, (double)(16 - j), (double)(16 - j));
+        this.setDefaultState(this.getDefaultState().with(WATERLOGGED, false).with(FACING, Direction.UP));
+        this.UP_SHAPE = Block.createCuboidShape(j, 0.0D, j, 16 - j, i, 16 - j);
+        this.DOWN_SHAPE = Block.createCuboidShape(j, 16 - i, j, 16 - j, 16.0D, 16 - j);
+        this.NORTH_SHAPE = Block.createCuboidShape(j, j, 16 - i, 16 - j, 16 - j, 16.0D);
+        this.SOUTH_SHAPE = Block.createCuboidShape(j, j, 0.0D, 16 - j, 16 - j, i);
+        this.EAST_SHAPE = Block.createCuboidShape(0.0D, j, j, i, 16 - j, 16 - j);
+        this.WEST_SHAPE = Block.createCuboidShape(16 - i, j, j, 16.0D, 16 - j, 16 - j);
     }
 
 
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        Direction direction = (Direction)state.get(FACING);
+        Direction direction = state.get(FACING);
         switch(direction) {
             case NORTH:
                 return this.NORTH_SHAPE;
@@ -92,36 +92,36 @@ public class PeproGemClusterBlock extends PeproGemBlock implements Waterloggable
     }
 
     public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
-        Direction direction = (Direction)state.get(FACING);
+        Direction direction = state.get(FACING);
         BlockPos blockPos = pos.offset(direction.getOpposite());
         return world.getBlockState(blockPos).isSideSolidFullSquare(world, blockPos, direction);
     }
 
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
-        if ((Boolean)state.get(WATERLOGGED)) {
+        if (state.get(WATERLOGGED)) {
             world.getFluidTickScheduler().schedule(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
 
-        return direction == ((Direction)state.get(FACING)).getOpposite() && !state.canPlaceAt(world, pos) ? Blocks.AIR.getDefaultState() : super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
+        return direction == state.get(FACING).getOpposite() && !state.canPlaceAt(world, pos) ? Blocks.AIR.getDefaultState() : super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
     }
 
     @Nullable
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         WorldAccess worldAccess = ctx.getWorld();
         BlockPos blockPos = ctx.getBlockPos();
-        return (BlockState)((BlockState)this.getDefaultState().with(WATERLOGGED, worldAccess.getFluidState(blockPos).getFluid() == Fluids.WATER)).with(FACING, ctx.getSide());
+        return this.getDefaultState().with(WATERLOGGED, worldAccess.getFluidState(blockPos).getFluid() == Fluids.WATER).with(FACING, ctx.getSide());
     }
 
     public BlockState rotate(BlockState state, BlockRotation rotation) {
-        return (BlockState)state.with(FACING, rotation.rotate((Direction)state.get(FACING)));
+        return state.with(FACING, rotation.rotate(state.get(FACING)));
     }
 
     public BlockState mirror(BlockState state, BlockMirror mirror) {
-        return state.rotate(mirror.getRotation((Direction)state.get(FACING)));
+        return state.rotate(mirror.getRotation(state.get(FACING)));
     }
 
     public FluidState getFluidState(BlockState state) {
-        return (Boolean)state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
+        return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
     }
 
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
