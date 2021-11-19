@@ -20,5 +20,11 @@
   "item.pepro.ruby": "Ruby",
   "item.pepro.sapphire": "Sapphire",
   "item.pepro.topaz": "Topaz",
-  "item.pepro.zircon": "Zircon"
+  "item.pepro.zircon": "Zircon",
+  "item.pepro.carbon_nanotube": "Carbon Nanotube",
+  "item.pepro.carbon_nanotube_axe": "Carbon Nanotube Axe",
+  "item.pepro.carbon_nanotube_hoe": "Carbon Nanotube Hoe",
+  "item.pepro.carbon_nanotube_pickaxe": "Carbon Nanotube Pickaxe",
+  "item.pepro.carbon_nanotube_shovel": "Carbon Nanotube Shovel",
+  "item.pepro.carbon_nanotube_sword": "Carbon Nanotube Sword"
 }

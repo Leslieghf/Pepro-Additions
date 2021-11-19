@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "pepro:item/carbon_nanotube_pickaxe"
+  }
+}

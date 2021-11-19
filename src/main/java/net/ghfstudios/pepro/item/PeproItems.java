@@ -3,8 +3,7 @@ package net.ghfstudios.pepro.item;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.ghfstudios.pepro.block.PeproBlock;
 import net.ghfstudios.pepro.block.PeproBlocks;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.ItemGroup;
+import net.minecraft.item.*;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
@@ -281,6 +280,15 @@ public class PeproItems {
     public static final PeproItem QUANTUM_CRYSTAL_MATRIX;
     public static final PeproItem ENTANGLED_QUANTUM_CRYSTAL_MATRIX;
 
+    public static final PeproItem CARBON_NANOTUBE;
+    public static final Item CARBON_NANOTUBE_SWORD;
+    public static final Item CARBON_NANOTUBE_SHOVEL;
+    public static final Item CARBON_NANOTUBE_PICKAXE;
+    public static final Item CARBON_NANOTUBE_AXE;
+    public static final Item CARBON_NANOTUBE_HOE;
+
+    //////CHANGE TO CUSTOM PEPRO TOOL ITEM CLASSES//////
+
 
 
 
@@ -293,6 +301,9 @@ public class PeproItems {
         return Registry.register(Registry.ITEM, new Identifier("pepro", id), item);
     }
 
+    private static Item register(String id, Item item) {
+        return Registry.register(Registry.ITEM, new Identifier("pepro", id), item);
+    }
 
     //Item registrations
     static {
@@ -479,7 +490,6 @@ public class PeproItems {
         LOW_TEMPERATURE_DIAMOND_BLOCK = register(PeproBlocks.LOW_TEMPERATURE_DIAMOND_BLOCK, ItemGroup.BUILDING_BLOCKS);
 
 
-        //Items
         AMETHYST = register("amethyst", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
         AQUAMARINE = register("aquamarine", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
         CITRINE = register("citrine", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
@@ -562,5 +572,12 @@ public class PeproItems {
         ULTRA_DENSE_CRYSTAL_MATRIX = register("ultra_dense_crystal_matrix", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
         QUANTUM_CRYSTAL_MATRIX = register("quantum_crystal_matrix", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
         ENTANGLED_QUANTUM_CRYSTAL_MATRIX = register("entangled_quantum_crystal_matrix", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+
+        CARBON_NANOTUBE = register("carbon_nanotube", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        CARBON_NANOTUBE_SWORD = register("carbon_nanotube_sword", (new PeproSwordItem(PeproToolMaterials.CARBON_NANOTUBE, 3, -2.0F, (new Item.Settings()).group(ItemGroup.COMBAT).fireproof())));
+        CARBON_NANOTUBE_SHOVEL = register("carbon_nanotube_shovel", (new PeproShovelItem(PeproToolMaterials.CARBON_NANOTUBE, 1.5F, -2.6F, (new Item.Settings()).group(ItemGroup.TOOLS).fireproof())));
+        CARBON_NANOTUBE_PICKAXE = register("carbon_nanotube_pickaxe", (new PeproPickaxeItem(PeproToolMaterials.CARBON_NANOTUBE, 1, -2.4F, (new Item.Settings()).group(ItemGroup.TOOLS).fireproof())));
+        CARBON_NANOTUBE_AXE = register("carbon_nanotube_axe", (new PeproAxeItem(PeproToolMaterials.CARBON_NANOTUBE, 5.0F, -2.6F, (new Item.Settings()).group(ItemGroup.TOOLS).fireproof())));
+        CARBON_NANOTUBE_HOE = register("carbon_nanotube_hoe", (new PeproHoeItem(PeproToolMaterials.CARBON_NANOTUBE, -5, 0.4F, (new Item.Settings()).group(ItemGroup.TOOLS).fireproof())));
     }
 }

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:diamond_axe"
+  },
+  "addition": {
+    "item": "pepro:carbon_nanotube"
+  },
+  "result": {
+    "item": "pepro:carbon_nanotube_axe"
+  }
+}

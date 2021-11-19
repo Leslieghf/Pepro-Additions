@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DCD",
+    "DCD",
+    "DCD"
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:coal_block"
+    },
+    "D": {
+          "item": "minecraft:diamond_block"
+        }
+  },
+  "result": {
+    "item": "pepro:carbon_nanotube"
+  }
+}
