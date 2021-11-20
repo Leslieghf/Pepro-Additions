@@ -1,5 +1,5 @@
 {
-	"credit": "Made with Blockbench, Made by Leslieghf",
+	"parent": "block/orientable_with_bottom",
 	"textures": {
 		"0": "pepro:block/generic_machine_side",
 		"1": "pepro:block/generic_machine_top",
