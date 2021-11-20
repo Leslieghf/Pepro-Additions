@@ -191,6 +191,8 @@ public class PeproItems {
 
     public static final BlockItem VOID_OPAL_BLOCK;
     public static final BlockItem LOW_TEMPERATURE_DIAMOND_BLOCK;
+
+    public static final BlockItem GENERIC_MACHINE;
     
     //Items
     public static final PeproItem AMETHYST;
@@ -488,6 +490,9 @@ public class PeproItems {
 
         VOID_OPAL_BLOCK = register(PeproBlocks.VOID_OPAL_BLOCK, ItemGroup.BUILDING_BLOCKS);
         LOW_TEMPERATURE_DIAMOND_BLOCK = register(PeproBlocks.LOW_TEMPERATURE_DIAMOND_BLOCK, ItemGroup.BUILDING_BLOCKS);
+
+
+        GENERIC_MACHINE = register(PeproBlocks.GENERIC_MACHINE, ItemGroup.BUILDING_BLOCKS);
 
 
         AMETHYST = register("amethyst", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));

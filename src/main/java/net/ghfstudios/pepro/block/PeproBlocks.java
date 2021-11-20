@@ -189,6 +189,8 @@ public class PeproBlocks {
     public static final PeproBlock VOID_OPAL_BLOCK;
     public static final PeproBlock LOW_TEMPERATURE_DIAMOND_BLOCK;
 
+    public static final PeproBlock GENERIC_MACHINE;
+
 
     private static PeproBlock register(String id, PeproBlock block) {
         return Registry.register(Registry.BLOCK, new Identifier("pepro", id), block);
@@ -373,5 +375,5 @@ public class PeproBlocks {
         VANADIUM_BLOCK = register("vanadium_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
         ZINC_BLOCK = register("zinc_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
 
-    }
+        GENERIC_MACHINE = register("generic_machine", new PeproMachineBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));}
 }
