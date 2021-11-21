@@ -25,14 +25,16 @@ import net.minecraft.world.World;
  */
 public class QuantumDecimatorEntity extends ThrownItemEntity {
     protected Entity owner;
+    protected ItemStack itemStack;
 
     public QuantumDecimatorEntity(EntityType<? extends QuantumDecimatorEntity> entityType, World world) {
         super(entityType, world);
     }
 
-    public QuantumDecimatorEntity(World world, LivingEntity livingEntity) {
+    public QuantumDecimatorEntity(World world, LivingEntity livingEntity, ItemStack itemStack) {
         super(EntityType.SNOWBALL, livingEntity, world);
         owner = livingEntity;
+        this.itemStack = itemStack;
     }
 
     public QuantumDecimatorEntity(World world, double d, double e, double f) {
@@ -59,6 +61,10 @@ public class QuantumDecimatorEntity extends ThrownItemEntity {
 
     }
 
+    public void tick() {
+        this.setPitch(this.getPitch() + 18);
+    }
+
     protected void onEntityHit(EntityHitResult entityHitResult) {
         super.onEntityHit(entityHitResult);
         Entity entity = entityHitResult.getEntity();
@@ -68,14 +74,16 @@ public class QuantumDecimatorEntity extends ThrownItemEntity {
         LightningEntity lightningEntity = new LightningEntity(EntityType.LIGHTNING_BOLT, world);
         lightningEntity.setPosition(entityHitResult.getPos());
         world.spawnEntity(lightningEntity);
+        this.dropStack(itemStack);
     }
 
     protected void onCollision(HitResult hitResult) {
         super.onCollision(hitResult);
-
         LightningEntity lightningEntity = new LightningEntity(EntityType.LIGHTNING_BOLT, world);
         lightningEntity.setPosition(hitResult.getPos());
         world.spawnEntity(lightningEntity);
+
+        this.dropStack(itemStack);
 
         if (!this.world.isClient) {
             this.world.sendEntityStatus(this, (byte)3);
