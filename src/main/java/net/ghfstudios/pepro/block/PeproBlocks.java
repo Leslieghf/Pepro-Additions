@@ -2,6 +2,7 @@ package net.ghfstudios.pepro.block;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
+import net.ghfstudios.pepro.block.machines.MachineBlock;
 import net.minecraft.block.Material;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
@@ -190,6 +191,7 @@ public class PeproBlocks {
     public static final PeproBlock LOW_TEMPERATURE_DIAMOND_BLOCK;
 
     public static final PeproBlock GENERIC_MACHINE;
+    public static final PeproBlock COMPRESSION_CRAFTING_TABLE;
 
 
     private static PeproBlock register(String id, PeproBlock block) {
@@ -375,5 +377,7 @@ public class PeproBlocks {
         VANADIUM_BLOCK = register("vanadium_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
         ZINC_BLOCK = register("zinc_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
 
-        GENERIC_MACHINE = register("generic_machine", new PeproMachineBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));}
+        GENERIC_MACHINE = register("generic_machine", new MachineBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
+        COMPRESSION_CRAFTING_TABLE = register("compression_crafting_table", new MachineBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
+    }
 }

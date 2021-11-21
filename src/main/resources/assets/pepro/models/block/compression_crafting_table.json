@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "pepro:block/compression_crafting_table_side",
+    "north": "pepro:block/compression_crafting_table_side",
+    "south": "pepro:block/compression_crafting_table_side",
+    "east": "pepro:block/compression_crafting_table_side",
+    "west": "pepro:block/compression_crafting_table_side",
+    "up": "pepro:block/compression_crafting_table_top",
+    "down": "pepro:block/compression_crafting_table_bottom"
+  }
+}

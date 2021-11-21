@@ -193,7 +193,8 @@ public class PeproItems {
     public static final BlockItem LOW_TEMPERATURE_DIAMOND_BLOCK;
 
     public static final BlockItem GENERIC_MACHINE;
-    
+    public static final BlockItem COMPRESSION_CRAFTING_TABLE;
+
     //Items
     public static final PeproItem AMETHYST;
     public static final PeproItem AQUAMARINE;
@@ -288,6 +289,8 @@ public class PeproItems {
     public static final Item CARBON_NANOTUBE_PICKAXE;
     public static final Item CARBON_NANOTUBE_AXE;
     public static final Item CARBON_NANOTUBE_HOE;
+
+    public static final Item QUANTUM_DECIMATOR;
 
     //////CHANGE TO CUSTOM PEPRO TOOL ITEM CLASSES//////
 
@@ -493,6 +496,7 @@ public class PeproItems {
 
 
         GENERIC_MACHINE = register(PeproBlocks.GENERIC_MACHINE, ItemGroup.BUILDING_BLOCKS);
+        COMPRESSION_CRAFTING_TABLE = register(PeproBlocks.COMPRESSION_CRAFTING_TABLE, ItemGroup.BUILDING_BLOCKS);
 
 
         AMETHYST = register("amethyst", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
@@ -584,5 +588,7 @@ public class PeproItems {
         CARBON_NANOTUBE_PICKAXE = register("carbon_nanotube_pickaxe", (new PeproPickaxeItem(PeproToolMaterials.CARBON_NANOTUBE, 1, -2.4F, (new Item.Settings()).group(ItemGroup.TOOLS).fireproof())));
         CARBON_NANOTUBE_AXE = register("carbon_nanotube_axe", (new PeproAxeItem(PeproToolMaterials.CARBON_NANOTUBE, 5.0F, -2.6F, (new Item.Settings()).group(ItemGroup.TOOLS).fireproof())));
         CARBON_NANOTUBE_HOE = register("carbon_nanotube_hoe", (new PeproHoeItem(PeproToolMaterials.CARBON_NANOTUBE, -5, 0.4F, (new Item.Settings()).group(ItemGroup.TOOLS).fireproof())));
+
+        QUANTUM_DECIMATOR = register("quantum_decimator", (new QuantumDecimatorItem(PeproToolMaterials.QUANTUM_MATRIX, 9, -3.0F, (new Item.Settings()).group(ItemGroup.TOOLS).fireproof())));
     }
 }
