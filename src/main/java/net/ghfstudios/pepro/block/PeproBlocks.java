@@ -2,7 +2,7 @@ package net.ghfstudios.pepro.block;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
-import net.ghfstudios.pepro.block.machines.MachineBlock;
+import net.ghfstudios.pepro.block.machines.*;
 import net.minecraft.block.Material;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
@@ -190,8 +190,17 @@ public class PeproBlocks {
     public static final PeproBlock VOID_OPAL_BLOCK;
     public static final PeproBlock LOW_TEMPERATURE_DIAMOND_BLOCK;
 
-    public static final PeproBlock GENERIC_MACHINE;
     public static final PeproBlock COMPRESSION_CRAFTING_TABLE;
+    public static final PeproBlock WAX_INJECTOR;
+    public static final PeproBlock WAX_ASSEMBLER;
+    public static final PeproBlock SLURRY_COATER;
+    public static final PeproBlock STUCCOER;
+    public static final PeproBlock DEWAXER;
+    public static final PeproBlock CASTER;
+    public static final PeproBlock SHELL_REMOVER;
+    public static final PeproBlock OFFCUTTER;
+    public static final PeproBlock FINISHER;
+    public static final PeproBlock INSPECTOR;
 
 
     private static PeproBlock register(String id, PeproBlock block) {
@@ -377,7 +386,16 @@ public class PeproBlocks {
         VANADIUM_BLOCK = register("vanadium_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
         ZINC_BLOCK = register("zinc_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
 
-        GENERIC_MACHINE = register("generic_machine", new MachineBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
-        COMPRESSION_CRAFTING_TABLE = register("compression_crafting_table", new MachineBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
+        COMPRESSION_CRAFTING_TABLE = register("compression_crafting_table", new CompressionCraftingTable(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
+        WAX_INJECTOR = register("wax_injector", new WaxInjectorBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
+        WAX_ASSEMBLER = register("wax_assembler", new WaxAssemblerBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
+        SLURRY_COATER = register("slurry_coater", new SlurryCoaterBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
+        STUCCOER = register("stuccoer", new StuccoerBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
+        DEWAXER = register("dewaxer", new DewaxerBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
+        CASTER = register("caster", new CasterBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
+        SHELL_REMOVER = register("shell_remover", new ShellRemoverBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
+        OFFCUTTER = register("offcutter", new OffcutterBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
+        FINISHER = register("finisher", new FinisherBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
+        INSPECTOR = register("inspector", new InspectorBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
     }
 }

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "pepro:block/inspector_side",
+    "down": "pepro:block/inspector_bottom",
+    "up": "pepro:block/inspector_top",
+    "north": "pepro:block/inspector_front",
+    "east": "pepro:block/inspector_side",
+    "south": "pepro:block/inspector_side",
+    "west": "pepro:block/inspector_side"
+  }
+}

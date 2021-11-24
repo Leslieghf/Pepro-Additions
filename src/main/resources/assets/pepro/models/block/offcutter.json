@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "pepro:block/offcutter_side",
+    "down": "pepro:block/offcutter_bottom",
+    "up": "pepro:block/offcutter_top",
+    "north": "pepro:block/offcutter_front",
+    "east": "pepro:block/offcutter_side",
+    "south": "pepro:block/offcutter_side",
+    "west": "pepro:block/offcutter_side"
+  }
+}

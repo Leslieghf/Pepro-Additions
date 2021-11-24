@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "pepro:block/offcutter",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "pepro:block/offcutter",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "pepro:block/offcutter"
+    },
+    "facing=west": {
+      "model": "pepro:block/offcutter",
+      "y": 90
+    }
+  }
+}

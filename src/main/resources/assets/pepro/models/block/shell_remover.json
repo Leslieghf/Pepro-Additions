@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "pepro:block/shell_remover_side",
+    "down": "pepro:block/shell_remover_bottom",
+    "up": "pepro:block/shell_remover_top",
+    "north": "pepro:block/shell_remover_front",
+    "east": "pepro:block/shell_remover_side",
+    "south": "pepro:block/shell_remover_side",
+    "west": "pepro:block/shell_remover_side"
+  }
+}

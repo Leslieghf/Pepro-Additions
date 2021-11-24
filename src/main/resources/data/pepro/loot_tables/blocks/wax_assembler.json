@@ -7,7 +7,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "pepro:dev_measure_generic"
+          "name": "pepro:wax_assembler"
         }
       ],
       "conditions": [

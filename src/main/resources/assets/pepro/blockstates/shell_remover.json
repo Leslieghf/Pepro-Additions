@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "pepro:block/shell_remover",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "pepro:block/shell_remover",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "pepro:block/shell_remover"
+    },
+    "facing=west": {
+      "model": "pepro:block/shell_remover",
+      "y": 90
+    }
+  }
+}

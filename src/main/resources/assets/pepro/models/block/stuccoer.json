@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "pepro:block/stuccoer_side",
+    "down": "pepro:block/stuccoer_bottom",
+    "up": "pepro:block/stuccoer_top",
+    "north": "pepro:block/stuccoer_front",
+    "east": "pepro:block/stuccoer_side",
+    "south": "pepro:block/stuccoer_side",
+    "west": "pepro:block/stuccoer_side"
+  }
+}

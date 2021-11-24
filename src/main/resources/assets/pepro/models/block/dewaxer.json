@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "pepro:block/dewaxer_side",
+    "down": "pepro:block/dewaxer_bottom",
+    "up": "pepro:block/dewaxer_top",
+    "north": "pepro:block/dewaxer_front",
+    "east": "pepro:block/dewaxer_side",
+    "south": "pepro:block/dewaxer_side",
+    "west": "pepro:block/dewaxer_side"
+  }
+}

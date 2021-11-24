@@ -192,10 +192,26 @@ public class PeproItems {
     public static final BlockItem VOID_OPAL_BLOCK;
     public static final BlockItem LOW_TEMPERATURE_DIAMOND_BLOCK;
 
-    public static final BlockItem GENERIC_MACHINE;
     public static final BlockItem COMPRESSION_CRAFTING_TABLE;
+    public static final BlockItem WAX_INJECTOR;
+    public static final BlockItem WAX_ASSEMBLER;
+    public static final BlockItem SLURRY_COATER;
+    public static final BlockItem STUCCOER;
+    public static final BlockItem DEWAXER;
+    public static final BlockItem CASTER;
+    public static final BlockItem SHELL_REMOVER;
+    public static final BlockItem OFFCUTTER;
+    public static final BlockItem FINISHER;
+    public static final BlockItem INSPECTOR;
 
-    //Items
+
+
+
+
+
+
+
+
     public static final PeproItem AMETHYST;
     public static final PeproItem AQUAMARINE;
     public static final PeproItem CITRINE;
@@ -210,7 +226,6 @@ public class PeproItems {
     public static final PeproItem VOID_OPAL;
     public static final PeproItem LOW_TEMPERATURE_DIAMOND;
 
-    //Materials
     public static final PeproItem RAW_ALUMINIUM;
     public static final PeproItem RAW_ANTIMONY;
     public static final PeproItem RAW_BISMUTH;
@@ -240,9 +255,6 @@ public class PeproItems {
     public static final PeproItem RAW_SULFUR;
     public static final PeproItem RAW_VANADIUM;
     public static final PeproItem RAW_ZINC;
-
-    //INGOTS
-
 
     public static final PeproItem AMALGAM_INGOT;
     public static final PeproItem ALNICO_INGOT;
@@ -494,9 +506,24 @@ public class PeproItems {
         VOID_OPAL_BLOCK = register(PeproBlocks.VOID_OPAL_BLOCK, ItemGroup.BUILDING_BLOCKS);
         LOW_TEMPERATURE_DIAMOND_BLOCK = register(PeproBlocks.LOW_TEMPERATURE_DIAMOND_BLOCK, ItemGroup.BUILDING_BLOCKS);
 
-
-        GENERIC_MACHINE = register(PeproBlocks.GENERIC_MACHINE, ItemGroup.BUILDING_BLOCKS);
         COMPRESSION_CRAFTING_TABLE = register(PeproBlocks.COMPRESSION_CRAFTING_TABLE, ItemGroup.BUILDING_BLOCKS);
+        WAX_INJECTOR = register(PeproBlocks.WAX_INJECTOR, ItemGroup.BUILDING_BLOCKS);
+        WAX_ASSEMBLER = register(PeproBlocks.WAX_ASSEMBLER, ItemGroup.BUILDING_BLOCKS);
+        SLURRY_COATER = register(PeproBlocks.SLURRY_COATER, ItemGroup.BUILDING_BLOCKS);
+        STUCCOER = register(PeproBlocks.STUCCOER, ItemGroup.BUILDING_BLOCKS);
+        DEWAXER = register(PeproBlocks.DEWAXER, ItemGroup.BUILDING_BLOCKS);
+        CASTER = register(PeproBlocks.CASTER, ItemGroup.BUILDING_BLOCKS);
+        SHELL_REMOVER = register(PeproBlocks.SHELL_REMOVER, ItemGroup.BUILDING_BLOCKS);
+        OFFCUTTER = register(PeproBlocks.OFFCUTTER, ItemGroup.BUILDING_BLOCKS);
+        FINISHER = register(PeproBlocks.FINISHER, ItemGroup.BUILDING_BLOCKS);
+        INSPECTOR = register(PeproBlocks.INSPECTOR, ItemGroup.BUILDING_BLOCKS);
+
+
+
+
+
+
+
 
 
         AMETHYST = register("amethyst", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
@@ -590,5 +617,7 @@ public class PeproItems {
         CARBON_NANOTUBE_HOE = register("carbon_nanotube_hoe", (new PeproHoeItem(PeproToolMaterials.CARBON_NANOTUBE, -5, 0.4F, (new Item.Settings()).group(ItemGroup.TOOLS).fireproof())));
 
         QUANTUM_DECIMATOR = register("quantum_decimator", (new QuantumDecimatorItem(PeproToolMaterials.QUANTUM_MATRIX, 9, -3.0F, (new Item.Settings()).group(ItemGroup.TOOLS).fireproof())));
+
+
     }
 }

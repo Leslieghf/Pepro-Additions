@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "pepro:block/finisher_side",
+    "down": "pepro:block/finisher_bottom",
+    "up": "pepro:block/finisher_top",
+    "north": "pepro:block/finisher_front",
+    "east": "pepro:block/finisher_side",
+    "south": "pepro:block/finisher_side",
+    "west": "pepro:block/finisher_side"
+  }
+}

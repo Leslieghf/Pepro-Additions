@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "pepro:block/wax_assembler",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "pepro:block/wax_assembler",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "pepro:block/wax_assembler"
+    },
+    "facing=west": {
+      "model": "pepro:block/wax_assembler",
+      "y": 90
+    }
+  }
+}

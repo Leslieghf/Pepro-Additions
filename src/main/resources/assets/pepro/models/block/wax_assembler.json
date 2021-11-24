@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "pepro:block/wax_assembler_side",
+    "down": "pepro:block/wax_assembler_bottom",
+    "up": "pepro:block/wax_assembler_top",
+    "north": "pepro:block/wax_assembler_front",
+    "east": "pepro:block/wax_assembler_side",
+    "south": "pepro:block/wax_assembler_side",
+    "west": "pepro:block/wax_assembler_side"
+  }
+}

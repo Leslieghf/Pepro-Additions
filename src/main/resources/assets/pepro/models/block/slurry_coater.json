@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "pepro:block/slurry_coater_side",
+    "down": "pepro:block/slurry_coater_bottom",
+    "up": "pepro:block/slurry_coater_top",
+    "north": "pepro:block/slurry_coater_front",
+    "east": "pepro:block/slurry_coater_side",
+    "south": "pepro:block/slurry_coater_side",
+    "west": "pepro:block/slurry_coater_side"
+  }
+}
