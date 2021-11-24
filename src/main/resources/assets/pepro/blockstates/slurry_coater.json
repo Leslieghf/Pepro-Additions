@@ -2,18 +2,18 @@
   "variants": {
     "facing=east": {
       "model": "pepro:block/slurry_coater",
-      "y": 270
+      "y": 90
     },
     "facing=north": {
+      "model": "pepro:block/slurry_coater"
+    },
+    "facing=south": {
       "model": "pepro:block/slurry_coater",
       "y": 180
     },
-    "facing=south": {
-      "model": "pepro:block/slurry_coater"
-    },
     "facing=west": {
       "model": "pepro:block/slurry_coater",
-      "y": 90
+      "y": 270
     }
   }
 }

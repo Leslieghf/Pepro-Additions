@@ -2,18 +2,18 @@
   "variants": {
     "facing=east": {
       "model": "pepro:block/stuccoer",
-      "y": 270
+      "y": 90
     },
     "facing=north": {
+      "model": "pepro:block/stuccoer"
+    },
+    "facing=south": {
       "model": "pepro:block/stuccoer",
       "y": 180
     },
-    "facing=south": {
-      "model": "pepro:block/stuccoer"
-    },
     "facing=west": {
       "model": "pepro:block/stuccoer",
-      "y": 90
+      "y": 270
     }
   }
 }
