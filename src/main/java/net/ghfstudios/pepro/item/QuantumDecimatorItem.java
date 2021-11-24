@@ -30,10 +30,9 @@ public class QuantumDecimatorItem extends PeproHammerItem{
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
         if (!world.isClient) {
-            QuantumDecimatorEntity quantumDecimatorEntity = new QuantumDecimatorEntity(world, user);
+            QuantumDecimatorEntity quantumDecimatorEntity = new QuantumDecimatorEntity(world, user, itemStack);
             quantumDecimatorEntity.setItem(itemStack);
-            quantumDecimatorEntity.setProperties(user, user.getPitch(), user.getYaw(), -20.0F, 0.5F, 1.0F);
-            quantumDecimatorEntity.dropStack(itemStack);
+            quantumDecimatorEntity.setProperties(user, user.getPitch(), user.getYaw(), 0.0F, 1.5F, 1.0F);
             world.spawnEntity(quantumDecimatorEntity);
         }
 
