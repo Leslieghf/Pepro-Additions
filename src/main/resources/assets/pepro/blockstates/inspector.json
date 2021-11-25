@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "facing=east": {
+      "model": "pepro:block/inspector",
+      "y": 90
+    },
+    "facing=north": {
       "model": "pepro:block/inspector"
+    },
+    "facing=south": {
+      "model": "pepro:block/inspector",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "pepro:block/inspector",
+      "y": 270
     }
   }
 }

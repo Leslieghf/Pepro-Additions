@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "facing=east": {
+      "model": "pepro:block/caster",
+      "y": 90
+    },
+    "facing=north": {
       "model": "pepro:block/caster"
+    },
+    "facing=south": {
+      "model": "pepro:block/caster",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "pepro:block/caster",
+      "y": 270
     }
   }
 }

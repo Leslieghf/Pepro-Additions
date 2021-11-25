@@ -1,5 +1,6 @@
 {
 	"credit": "Made with Blockbench",
+	"parent": "minecraft:block/cube",
 	"textures": {
 		"0": "pepro:block/inspector_bottom",
 		"1": "pepro:block/inspector_front",

@@ -1,5 +1,6 @@
 {
 	"credit": "Made with Blockbench",
+	"parent": "minecraft:block/cube",
 	"textures": {
 		"0": "pepro:block/shell_remover_front",
 		"1": "pepro:block/shell_remover_side",

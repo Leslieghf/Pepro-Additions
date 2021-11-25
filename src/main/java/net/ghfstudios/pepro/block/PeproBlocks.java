@@ -34,6 +34,18 @@ public class PeproBlocks {
     public static final PeproBlock DEEPSLATE_TOPAZ_ORE;
     public static final PeproBlock DEEPSLATE_ZIRCON_ORE;
 
+    public static final PeproBlock AQUAMARINE_BLOCK;
+    public static final PeproBlock CITRINE_BLOCK;
+    public static final PeproBlock GARNET_BLOCK;
+    public static final PeproBlock OPAL_BLOCK;
+    public static final PeproBlock PERIDOT_BLOCK;
+    public static final PeproBlock RUBY_BLOCK;
+    public static final PeproBlock SAPPHIRE_BLOCK;
+    public static final PeproBlock TOPAZ_BLOCK;
+    public static final PeproBlock ZIRCON_BLOCK;
+    public static final PeproBlock VOID_OPAL_BLOCK;
+    public static final PeproBlock LOW_TEMPERATURE_DIAMOND_BLOCK;
+
     public static final PeproBlock AQUAMARINE_CLUSTER;
     public static final PeproBlock CITRINE_CLUSTER;
     public static final PeproBlock GARNET_CLUSTER;
@@ -43,7 +55,6 @@ public class PeproBlocks {
     public static final PeproBlock SAPPHIRE_CLUSTER;
     public static final PeproBlock TOPAZ_CLUSTER;
     public static final PeproBlock ZIRCON_CLUSTER;
-
     public static final PeproBlock VOID_OPAL_CLUSTER;
     public static final PeproBlock LOW_TEMPERATURE_DIAMOND_CLUSTER;
 
@@ -177,19 +188,6 @@ public class PeproBlocks {
     public static final PeproBlock VANADIUM_BLOCK;
     public static final PeproBlock ZINC_BLOCK;
 
-    public static final PeproBlock AQUAMARINE_BLOCK;
-    public static final PeproBlock CITRINE_BLOCK;
-    public static final PeproBlock GARNET_BLOCK;
-    public static final PeproBlock OPAL_BLOCK;
-    public static final PeproBlock PERIDOT_BLOCK;
-    public static final PeproBlock RUBY_BLOCK;
-    public static final PeproBlock SAPPHIRE_BLOCK;
-    public static final PeproBlock TOPAZ_BLOCK;
-    public static final PeproBlock ZIRCON_BLOCK;
-
-    public static final PeproBlock VOID_OPAL_BLOCK;
-    public static final PeproBlock LOW_TEMPERATURE_DIAMOND_BLOCK;
-
     public static final CompressionCraftingTableBlock COMPRESSION_CRAFTING_TABLE;
     public static final WaxInjectorBlock WAX_INJECTOR;
     public static final WaxAssemblerBlock WAX_ASSEMBLER;
@@ -232,18 +230,6 @@ public class PeproBlocks {
         DEEPSLATE_TOPAZ_ORE = register("deepslate_topaz_ore", new PeproGemOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).sounds(BlockSoundGroup.STONE).requiresTool().strength(4.5f, 3.0f), UniformIntProvider.create(3, 7)));
         DEEPSLATE_ZIRCON_ORE = register("deepslate_zircon_ore", new PeproGemOreBlock(FabricBlockSettings.of(Material.STONE).breakByTool(FabricToolTags.PICKAXES, 2).sounds(BlockSoundGroup.STONE).requiresTool().strength(4.5f, 3.0f), UniformIntProvider.create(3, 7)));
 
-        AQUAMARINE_CLUSTER = register("aquamarine_cluster", new PeproGemClusterBlock(7, 3, FabricBlockSettings.of(Material.AMETHYST).nonOpaque().ticksRandomly().sounds(BlockSoundGroup.AMETHYST_CLUSTER).strength(1.5F).luminance((state) -> 5), UniformIntProvider.create(7, 15)));
-        CITRINE_CLUSTER = register("citrine_cluster", new PeproGemClusterBlock(7, 3, FabricBlockSettings.of(Material.AMETHYST).nonOpaque().ticksRandomly().sounds(BlockSoundGroup.AMETHYST_CLUSTER).strength(1.5F).luminance((state) -> 5), UniformIntProvider.create(7, 15)));
-        GARNET_CLUSTER = register("garnet_cluster", new PeproGemClusterBlock(7, 3, FabricBlockSettings.of(Material.AMETHYST).nonOpaque().ticksRandomly().sounds(BlockSoundGroup.AMETHYST_CLUSTER).strength(1.5F).luminance((state) -> 5), UniformIntProvider.create(7, 15)));
-        OPAL_CLUSTER = register("opal_cluster", new PeproGemClusterBlock(7, 3, FabricBlockSettings.of(Material.AMETHYST).nonOpaque().ticksRandomly().sounds(BlockSoundGroup.AMETHYST_CLUSTER).strength(1.5F).luminance((state) -> 5), UniformIntProvider.create(7, 15)));
-        PERIDOT_CLUSTER = register("peridot_cluster", new PeproGemClusterBlock(7, 3, FabricBlockSettings.of(Material.AMETHYST).nonOpaque().ticksRandomly().sounds(BlockSoundGroup.AMETHYST_CLUSTER).strength(1.5F).luminance((state) -> 5), UniformIntProvider.create(7, 15)));
-        RUBY_CLUSTER = register("ruby_cluster", new PeproGemClusterBlock(7, 3, FabricBlockSettings.of(Material.AMETHYST).nonOpaque().ticksRandomly().sounds(BlockSoundGroup.AMETHYST_CLUSTER).strength(1.5F).luminance((state) -> 5), UniformIntProvider.create(7, 15)));
-        SAPPHIRE_CLUSTER = register("sapphire_cluster", new PeproGemClusterBlock(7, 3, FabricBlockSettings.of(Material.AMETHYST).nonOpaque().ticksRandomly().sounds(BlockSoundGroup.AMETHYST_CLUSTER).strength(1.5F).luminance((state) -> 5), UniformIntProvider.create(7, 15)));
-        TOPAZ_CLUSTER = register("topaz_cluster", new PeproGemClusterBlock(7, 3, FabricBlockSettings.of(Material.AMETHYST).nonOpaque().ticksRandomly().sounds(BlockSoundGroup.AMETHYST_CLUSTER).strength(1.5F).luminance((state) -> 5), UniformIntProvider.create(7, 15)));
-        ZIRCON_CLUSTER = register("zircon_cluster", new PeproGemClusterBlock(7, 3, FabricBlockSettings.of(Material.AMETHYST).nonOpaque().ticksRandomly().sounds(BlockSoundGroup.AMETHYST_CLUSTER).strength(1.5F).luminance((state) -> 5), UniformIntProvider.create(7, 15)));
-        VOID_OPAL_CLUSTER = register("void_opal_cluster", new PeproGemClusterBlock(7, 3, FabricBlockSettings.of(Material.AMETHYST).nonOpaque().ticksRandomly().sounds(BlockSoundGroup.AMETHYST_CLUSTER).strength(1.5F).luminance((state) -> 5), UniformIntProvider.create(7, 15)));
-        LOW_TEMPERATURE_DIAMOND_CLUSTER = register("", new PeproGemClusterBlock(7, 3, FabricBlockSettings.of(Material.AMETHYST).nonOpaque().ticksRandomly().sounds(BlockSoundGroup.AMETHYST_CLUSTER).strength(1.5F).luminance((state) -> 5), UniformIntProvider.create(7, 15)));
-
         AQUAMARINE_BLOCK = register("aquamarine_block", new PeproGemBlock(FabricBlockSettings.of(Material.AMETHYST).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(1.5f, 1.5f).sounds(BlockSoundGroup.AMETHYST_BLOCK)));
         CITRINE_BLOCK = register("citrine_block", new PeproGemBlock(FabricBlockSettings.of(Material.AMETHYST).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(1.5f, 1.5f).sounds(BlockSoundGroup.AMETHYST_BLOCK)));
         GARNET_BLOCK = register("garnet_block", new PeproGemBlock(FabricBlockSettings.of(Material.AMETHYST).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(1.5f, 1.5f).sounds(BlockSoundGroup.AMETHYST_BLOCK)));
@@ -255,6 +241,18 @@ public class PeproBlocks {
         ZIRCON_BLOCK = register("zircon_block", new PeproGemBlock(FabricBlockSettings.of(Material.AMETHYST).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(1.5f, 1.5f).sounds(BlockSoundGroup.AMETHYST_BLOCK)));
         VOID_OPAL_BLOCK = register("void_opal_block", new PeproGemBlock(FabricBlockSettings.of(Material.AMETHYST).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(1.5f, 1.5f).sounds(BlockSoundGroup.AMETHYST_BLOCK)));
         LOW_TEMPERATURE_DIAMOND_BLOCK = register("low_temperature_diamond_block", new PeproGemBlock(FabricBlockSettings.of(Material.AMETHYST).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(1.5f, 1.5f).sounds(BlockSoundGroup.AMETHYST_BLOCK)));
+
+        AQUAMARINE_CLUSTER = register("aquamarine_cluster", new PeproGemClusterBlock(7, 3, FabricBlockSettings.of(Material.AMETHYST).nonOpaque().ticksRandomly().sounds(BlockSoundGroup.AMETHYST_CLUSTER).strength(1.5F).luminance((state) -> 5), UniformIntProvider.create(7, 15)));
+        CITRINE_CLUSTER = register("citrine_cluster", new PeproGemClusterBlock(7, 3, FabricBlockSettings.of(Material.AMETHYST).nonOpaque().ticksRandomly().sounds(BlockSoundGroup.AMETHYST_CLUSTER).strength(1.5F).luminance((state) -> 5), UniformIntProvider.create(7, 15)));
+        GARNET_CLUSTER = register("garnet_cluster", new PeproGemClusterBlock(7, 3, FabricBlockSettings.of(Material.AMETHYST).nonOpaque().ticksRandomly().sounds(BlockSoundGroup.AMETHYST_CLUSTER).strength(1.5F).luminance((state) -> 5), UniformIntProvider.create(7, 15)));
+        OPAL_CLUSTER = register("opal_cluster", new PeproGemClusterBlock(7, 3, FabricBlockSettings.of(Material.AMETHYST).nonOpaque().ticksRandomly().sounds(BlockSoundGroup.AMETHYST_CLUSTER).strength(1.5F).luminance((state) -> 5), UniformIntProvider.create(7, 15)));
+        PERIDOT_CLUSTER = register("peridot_cluster", new PeproGemClusterBlock(7, 3, FabricBlockSettings.of(Material.AMETHYST).nonOpaque().ticksRandomly().sounds(BlockSoundGroup.AMETHYST_CLUSTER).strength(1.5F).luminance((state) -> 5), UniformIntProvider.create(7, 15)));
+        RUBY_CLUSTER = register("ruby_cluster", new PeproGemClusterBlock(7, 3, FabricBlockSettings.of(Material.AMETHYST).nonOpaque().ticksRandomly().sounds(BlockSoundGroup.AMETHYST_CLUSTER).strength(1.5F).luminance((state) -> 5), UniformIntProvider.create(7, 15)));
+        SAPPHIRE_CLUSTER = register("sapphire_cluster", new PeproGemClusterBlock(7, 3, FabricBlockSettings.of(Material.AMETHYST).nonOpaque().ticksRandomly().sounds(BlockSoundGroup.AMETHYST_CLUSTER).strength(1.5F).luminance((state) -> 5), UniformIntProvider.create(7, 15)));
+        TOPAZ_CLUSTER = register("topaz_cluster", new PeproGemClusterBlock(7, 3, FabricBlockSettings.of(Material.AMETHYST).nonOpaque().ticksRandomly().sounds(BlockSoundGroup.AMETHYST_CLUSTER).strength(1.5F).luminance((state) -> 5), UniformIntProvider.create(7, 15)));
+        ZIRCON_CLUSTER = register("zircon_cluster", new PeproGemClusterBlock(7, 3, FabricBlockSettings.of(Material.AMETHYST).nonOpaque().ticksRandomly().sounds(BlockSoundGroup.AMETHYST_CLUSTER).strength(1.5F).luminance((state) -> 5), UniformIntProvider.create(7, 15)));
+        VOID_OPAL_CLUSTER = register("void_opal_cluster", new PeproGemClusterBlock(7, 3, FabricBlockSettings.of(Material.AMETHYST).nonOpaque().ticksRandomly().sounds(BlockSoundGroup.AMETHYST_CLUSTER).strength(1.5F).luminance((state) -> 5), UniformIntProvider.create(7, 15)));
+        LOW_TEMPERATURE_DIAMOND_CLUSTER = register("low_temperature_diamond_cluster", new PeproGemClusterBlock(7, 3, FabricBlockSettings.of(Material.AMETHYST).nonOpaque().ticksRandomly().sounds(BlockSoundGroup.AMETHYST_CLUSTER).strength(1.5F).luminance((state) -> 5), UniformIntProvider.create(7, 15)));
         
         BUDDING_AQUAMARINE = register("budding_aquamarine", new PeproBuddingGemBlock(FabricBlockSettings.of(Material.AMETHYST).ticksRandomly().breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(1.5f, 1.5f).sounds(BlockSoundGroup.AMETHYST_BLOCK)));
         BUDDING_CITRINE = register("budding_citrine", new PeproBuddingGemBlock(FabricBlockSettings.of(Material.AMETHYST).ticksRandomly().breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(1.5f, 1.5f).sounds(BlockSoundGroup.AMETHYST_BLOCK)));

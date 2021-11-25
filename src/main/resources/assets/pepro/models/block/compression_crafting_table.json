@@ -1,5 +1,6 @@
 {
 	"credit": "Made with Blockbench",
+	"parent": "minecraft:block/cube",
 	"textures": {
 		"0": "pepro:block/compression_crafting_table_side",
 		"1": "pepro:block/compression_crafting_table_top",

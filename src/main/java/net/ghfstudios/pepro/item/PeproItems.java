@@ -35,6 +35,19 @@ public class PeproItems {
     public static final BlockItem DEEPSLATE_TOPAZ_ORE;
     public static final BlockItem DEEPSLATE_ZIRCON_ORE;
 
+    public static final BlockItem AQUAMARINE_BLOCK;
+    public static final BlockItem CITRINE_BLOCK;
+    public static final BlockItem GARNET_BLOCK;
+    public static final BlockItem OPAL_BLOCK;
+    public static final BlockItem PERIDOT_BLOCK ;
+    public static final BlockItem RUBY_BLOCK;
+    public static final BlockItem SAPPHIRE_BLOCK;
+    public static final BlockItem TOPAZ_BLOCK;
+    public static final BlockItem ZIRCON_BLOCK;
+
+    public static final BlockItem VOID_OPAL_BLOCK;
+    public static final BlockItem LOW_TEMPERATURE_DIAMOND_BLOCK;
+
     public static final BlockItem AQUAMARINE_CLUSTER;
     public static final BlockItem CITRINE_CLUSTER;
     public static final BlockItem GARNET_CLUSTER;
@@ -179,19 +192,6 @@ public class PeproItems {
     public static final BlockItem VANADIUM_BLOCK;
     public static final BlockItem ZINC_BLOCK;
 
-    public static final BlockItem AQUAMARINE_BLOCK;
-    public static final BlockItem CITRINE_BLOCK;
-    public static final BlockItem GARNET_BLOCK;
-    public static final BlockItem OPAL_BLOCK;
-    public static final BlockItem PERIDOT_BLOCK ;
-    public static final BlockItem RUBY_BLOCK;
-    public static final BlockItem SAPPHIRE_BLOCK;
-    public static final BlockItem TOPAZ_BLOCK;
-    public static final BlockItem ZIRCON_BLOCK;
-
-    public static final BlockItem VOID_OPAL_BLOCK;
-    public static final BlockItem LOW_TEMPERATURE_DIAMOND_BLOCK;
-
     public static final BlockItem COMPRESSION_CRAFTING_TABLE;
     public static final BlockItem WAX_INJECTOR;
     public static final BlockItem WAX_ASSEMBLER;
@@ -255,6 +255,36 @@ public class PeproItems {
     public static final PeproItem RAW_SULFUR;
     public static final PeproItem RAW_VANADIUM;
     public static final PeproItem RAW_ZINC;
+    
+    public static final PeproItem ALUMINIUM_INGOT;
+    public static final PeproItem ANTIMONY_INGOT;
+    public static final PeproItem BISMUTH_INGOT;
+    public static final PeproItem BORON_INGOT;
+    public static final PeproItem CADMIUM_INGOT;
+    public static final PeproItem CARBON_INGOT;
+    public static final PeproItem CHROMIUM_INGOT;
+    public static final PeproItem COBALT_INGOT;
+    public static final PeproItem GERMANIUM_INGOT;
+    public static final PeproItem LEAD_INGOT;
+    public static final PeproItem LITHIUM_INGOT;
+    public static final PeproItem MANGANESE_INGOT;
+    public static final PeproItem MAGNESIUM_INGOT;
+    public static final PeproItem MERCURY_INGOT;
+    public static final PeproItem MOLYBDENUM_INGOT;
+    public static final PeproItem NICKEL_INGOT;
+    public static final PeproItem NIOBIUM_INGOT;
+    public static final PeproItem TIN_INGOT;
+    public static final PeproItem TITANIUM_INGOT;
+    public static final PeproItem TUNGSTEN_INGOT;
+    public static final PeproItem TANTALUM_INGOT;
+    public static final PeproItem PALLADIUM_INGOT;
+    public static final PeproItem PHOSPHORUS_INGOT;
+    public static final PeproItem PLATINUM_INGOT;
+    public static final PeproItem SILICON_INGOT;
+    public static final PeproItem SILVER_INGOT;
+    public static final PeproItem SULFUR_INGOT;
+    public static final PeproItem VANADIUM_INGOT;
+    public static final PeproItem ZINC_INGOT;
 
     public static final PeproItem AMALGAM_INGOT;
     public static final PeproItem ALNICO_INGOT;
@@ -347,8 +377,20 @@ public class PeproItems {
         DEEPSLATE_SAPPHIRE_ORE = register(PeproBlocks.DEEPSLATE_SAPPHIRE_ORE, ItemGroup.BUILDING_BLOCKS);
         DEEPSLATE_TOPAZ_ORE = register(PeproBlocks.DEEPSLATE_TOPAZ_ORE, ItemGroup.BUILDING_BLOCKS);
         DEEPSLATE_ZIRCON_ORE = register(PeproBlocks.DEEPSLATE_ZIRCON_ORE, ItemGroup.BUILDING_BLOCKS);
-        
-        
+
+        AQUAMARINE_BLOCK = register(PeproBlocks.AQUAMARINE_BLOCK, ItemGroup.BUILDING_BLOCKS);
+        CITRINE_BLOCK = register(PeproBlocks.CITRINE_BLOCK, ItemGroup.BUILDING_BLOCKS);
+        GARNET_BLOCK = register(PeproBlocks.GARNET_BLOCK, ItemGroup.BUILDING_BLOCKS);
+        OPAL_BLOCK = register(PeproBlocks.OPAL_BLOCK, ItemGroup.BUILDING_BLOCKS);
+        PERIDOT_BLOCK  = register(PeproBlocks.PERIDOT_BLOCK, ItemGroup.BUILDING_BLOCKS);
+        RUBY_BLOCK = register(PeproBlocks.RUBY_BLOCK, ItemGroup.BUILDING_BLOCKS);
+        SAPPHIRE_BLOCK = register(PeproBlocks.SAPPHIRE_BLOCK, ItemGroup.BUILDING_BLOCKS);
+        TOPAZ_BLOCK = register(PeproBlocks.TOPAZ_BLOCK, ItemGroup.BUILDING_BLOCKS);
+        ZIRCON_BLOCK = register(PeproBlocks.ZIRCON_BLOCK, ItemGroup.BUILDING_BLOCKS);
+
+        VOID_OPAL_BLOCK = register(PeproBlocks.VOID_OPAL_BLOCK, ItemGroup.BUILDING_BLOCKS);
+        LOW_TEMPERATURE_DIAMOND_BLOCK = register(PeproBlocks.LOW_TEMPERATURE_DIAMOND_BLOCK, ItemGroup.BUILDING_BLOCKS);
+
         AQUAMARINE_CLUSTER = register(PeproBlocks.AQUAMARINE_CLUSTER, ItemGroup.BUILDING_BLOCKS);
         CITRINE_CLUSTER = register(PeproBlocks.CITRINE_CLUSTER, ItemGroup.BUILDING_BLOCKS);
         GARNET_CLUSTER = register(PeproBlocks.GARNET_CLUSTER, ItemGroup.BUILDING_BLOCKS);
@@ -493,19 +535,6 @@ public class PeproItems {
         VANADIUM_BLOCK = register(PeproBlocks.VANADIUM_BLOCK, ItemGroup.BUILDING_BLOCKS);
         ZINC_BLOCK = register(PeproBlocks.ZINC_BLOCK, ItemGroup.BUILDING_BLOCKS);
 
-        AQUAMARINE_BLOCK = register(PeproBlocks.AQUAMARINE_BLOCK, ItemGroup.BUILDING_BLOCKS);
-        CITRINE_BLOCK = register(PeproBlocks.CITRINE_BLOCK, ItemGroup.BUILDING_BLOCKS);
-        GARNET_BLOCK = register(PeproBlocks.GARNET_BLOCK, ItemGroup.BUILDING_BLOCKS);
-        OPAL_BLOCK = register(PeproBlocks.OPAL_BLOCK, ItemGroup.BUILDING_BLOCKS);
-        PERIDOT_BLOCK  = register(PeproBlocks.PERIDOT_BLOCK, ItemGroup.BUILDING_BLOCKS);
-        RUBY_BLOCK = register(PeproBlocks.RUBY_BLOCK, ItemGroup.BUILDING_BLOCKS);
-        SAPPHIRE_BLOCK = register(PeproBlocks.SAPPHIRE_BLOCK, ItemGroup.BUILDING_BLOCKS);
-        TOPAZ_BLOCK = register(PeproBlocks.TOPAZ_BLOCK, ItemGroup.BUILDING_BLOCKS);
-        ZIRCON_BLOCK = register(PeproBlocks.ZIRCON_BLOCK, ItemGroup.BUILDING_BLOCKS);
-
-        VOID_OPAL_BLOCK = register(PeproBlocks.VOID_OPAL_BLOCK, ItemGroup.BUILDING_BLOCKS);
-        LOW_TEMPERATURE_DIAMOND_BLOCK = register(PeproBlocks.LOW_TEMPERATURE_DIAMOND_BLOCK, ItemGroup.BUILDING_BLOCKS);
-
         COMPRESSION_CRAFTING_TABLE = register(PeproBlocks.COMPRESSION_CRAFTING_TABLE, ItemGroup.BUILDING_BLOCKS);
         WAX_INJECTOR = register(PeproBlocks.WAX_INJECTOR, ItemGroup.BUILDING_BLOCKS);
         WAX_ASSEMBLER = register(PeproBlocks.WAX_ASSEMBLER, ItemGroup.BUILDING_BLOCKS);
@@ -570,6 +599,36 @@ public class PeproItems {
         RAW_VANADIUM = register("raw_vanadium", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
         RAW_ZINC = register("raw_zinc", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
 
+        ALUMINIUM_INGOT = register("aluminium_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        ANTIMONY_INGOT = register("antimony_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        BISMUTH_INGOT = register("bismuth_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        BORON_INGOT = register("boron_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        CADMIUM_INGOT = register("cadmium_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        CARBON_INGOT = register("carbon_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        CHROMIUM_INGOT = register("chromium_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        COBALT_INGOT = register("cobalt_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        GERMANIUM_INGOT = register("germanium_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        LEAD_INGOT = register("lead_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        LITHIUM_INGOT = register("lithium_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        MANGANESE_INGOT = register("manganese_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        MAGNESIUM_INGOT = register("magnesium_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        MERCURY_INGOT = register("mercury_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        MOLYBDENUM_INGOT = register("molybdenum_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        NICKEL_INGOT = register("nickel_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        NIOBIUM_INGOT = register("niobium_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        TIN_INGOT = register("tin_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        TITANIUM_INGOT = register("titanium_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        TUNGSTEN_INGOT = register("tungsten_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        TANTALUM_INGOT = register("tantalum_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        PALLADIUM_INGOT = register("palladium_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        PHOSPHORUS_INGOT = register("phosphorus_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        PLATINUM_INGOT = register("platinum_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        SILICON_INGOT = register("silicon_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        SILVER_INGOT = register("silver_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        SULFUR_INGOT = register("sulfur_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        VANADIUM_INGOT = register("vanadium_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        ZINC_INGOT = register("zinc_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
+        
         AMALGAM_INGOT = register("amalgam_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
         ALNICO_INGOT = register("alnico_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
         BABBIT_INGOT = register("babbit_ingot", new PeproItem(new FabricItemSettings().group(ItemGroup.MATERIALS)));
@@ -615,7 +674,6 @@ public class PeproItems {
         CARBON_NANOTUBE_PICKAXE = register("carbon_nanotube_pickaxe", (new PeproPickaxeItem(PeproToolMaterials.CARBON_NANOTUBE, 1, -2.4F, (new Item.Settings()).group(ItemGroup.TOOLS).fireproof())));
         CARBON_NANOTUBE_AXE = register("carbon_nanotube_axe", (new PeproAxeItem(PeproToolMaterials.CARBON_NANOTUBE, 5.0F, -2.6F, (new Item.Settings()).group(ItemGroup.TOOLS).fireproof())));
         CARBON_NANOTUBE_HOE = register("carbon_nanotube_hoe", (new PeproHoeItem(PeproToolMaterials.CARBON_NANOTUBE, -5, 0.4F, (new Item.Settings()).group(ItemGroup.TOOLS).fireproof())));
-
         QUANTUM_DECIMATOR = register("quantum_decimator", (new QuantumDecimatorItem(PeproToolMaterials.QUANTUM_MATRIX, 9, -3.0F, (new Item.Settings()).group(ItemGroup.TOOLS).fireproof())));
 
 

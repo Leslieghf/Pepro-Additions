@@ -1,5 +1,6 @@
 {
 	"credit": "Made with Blockbench",
+	"parent": "minecraft:block/cube",
 	"textures": {
 		"0": "pepro:block/wax_assembler_front",
 		"1": "pepro:block/wax_assembler_side",

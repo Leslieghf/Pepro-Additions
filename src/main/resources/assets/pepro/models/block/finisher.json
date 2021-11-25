@@ -1,5 +1,6 @@
 {
 	"credit": "Made with Blockbench",
+	"parent": "minecraft:block/cube",
 	"textures": {
 		"0": "pepro:block/finisher_top",
 		"1": "pepro:block/finisher_bottom",
