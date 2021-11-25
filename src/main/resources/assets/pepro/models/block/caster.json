@@ -1,12 +1,11 @@
 {
-  "parent": "block/cube",
+  "parent": "minecraft:block/cube",
   "textures": {
-    "particle": "pepro:block/caster_side",
     "down": "pepro:block/caster_bottom",
     "up": "pepro:block/caster_top",
     "north": "pepro:block/caster_front",
-    "east": "pepro:block/caster_side",
     "south": "pepro:block/caster_side",
-    "west": "pepro:block/caster_side"
+    "west": "pepro:block/caster_side",
+    "east": "pepro:block/caster_side"
   }
 }
