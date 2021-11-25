@@ -1,19 +1,7 @@
 {
   "variants": {
-    "facing=east": {
-      "model": "pepro:block/wax_injector",
-      "y": 90
-    },
-    "facing=north": {
+    "": {
       "model": "pepro:block/wax_injector"
-    },
-    "facing=south": {
-      "model": "pepro:block/wax_injector",
-      "y": 180
-    },
-    "facing=west": {
-      "model": "pepro:block/wax_injector",
-      "y": 270
     }
   }
 }

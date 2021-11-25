@@ -1,19 +1,7 @@
 {
   "variants": {
-    "facing=east": {
-      "model": "pepro:block/dewaxer",
-      "y": 90
-    },
-    "facing=north": {
+    "": {
       "model": "pepro:block/dewaxer"
-    },
-    "facing=south": {
-      "model": "pepro:block/dewaxer",
-      "y": 180
-    },
-    "facing=west": {
-      "model": "pepro:block/dewaxer",
-      "y": 270
     }
   }
 }

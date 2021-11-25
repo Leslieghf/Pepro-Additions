@@ -8,6 +8,7 @@ import net.minecraft.screen.NamedScreenHandlerFactory;
 import net.minecraft.screen.ScreenHandlerContext;
 import net.minecraft.screen.SimpleNamedScreenHandlerFactory;
 import net.minecraft.stat.Stats;
+import net.minecraft.state.property.Property;
 import net.minecraft.text.Text;
 import net.minecraft.text.TranslatableText;
 import net.minecraft.util.ActionResult;
@@ -21,6 +22,7 @@ import net.minecraft.world.World;
  * @disclaimer null
  */
 public class MachineBlock extends PeproBlock {
+
     public MachineBlock(FabricBlockSettings settings) {
         super(settings);
     }

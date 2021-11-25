@@ -1,12 +1,24 @@
 {
-  "parent": "minecraft:block/cube",
-  "textures": {
-    "particle": "pepro:block/shell_remover_side",
-    "down": "pepro:block/shell_remover_bottom",
-    "up": "pepro:block/shell_remover_top",
-    "north": "pepro:block/shell_remover_front",
-    "east": "pepro:block/shell_remover_side",
-    "south": "pepro:block/shell_remover_side",
-    "west": "pepro:block/shell_remover_side"
-  }
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "pepro:block/shell_remover_front",
+		"1": "pepro:block/shell_remover_side",
+		"2": "pepro:block/shell_remover_top",
+		"3": "pepro:block/shell_remover_bottom",
+		"particle": "pepro:block/shell_remover_front"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#2"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#3"}
+			}
+		}
+	]
 }

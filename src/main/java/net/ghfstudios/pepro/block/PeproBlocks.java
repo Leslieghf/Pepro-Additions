@@ -190,17 +190,17 @@ public class PeproBlocks {
     public static final PeproBlock VOID_OPAL_BLOCK;
     public static final PeproBlock LOW_TEMPERATURE_DIAMOND_BLOCK;
 
-    public static final PeproBlock COMPRESSION_CRAFTING_TABLE;
-    public static final PeproBlock WAX_INJECTOR;
-    public static final PeproBlock WAX_ASSEMBLER;
-    public static final PeproBlock SLURRY_COATER;
-    public static final PeproBlock STUCCOER;
-    public static final PeproBlock DEWAXER;
-    public static final PeproBlock CASTER;
-    public static final PeproBlock SHELL_REMOVER;
-    public static final PeproBlock OFFCUTTER;
-    public static final PeproBlock FINISHER;
-    public static final PeproBlock INSPECTOR;
+    public static final CompressionCraftingTableBlock COMPRESSION_CRAFTING_TABLE;
+    public static final WaxInjectorBlock WAX_INJECTOR;
+    public static final WaxAssemblerBlock WAX_ASSEMBLER;
+    public static final SlurryCoaterBlock SLURRY_COATER;
+    public static final StuccoerBlock STUCCOER;
+    public static final DewaxerBlock DEWAXER;
+    public static final CasterBlock CASTER;
+    public static final ShellRemoverBlock SHELL_REMOVER;
+    public static final OffcutterBlock OFFCUTTER;
+    public static final FinisherBlock FINISHER;
+    public static final InspectorBlock INSPECTOR;
 
 
     private static PeproBlock register(String id, PeproBlock block) {
@@ -386,16 +386,16 @@ public class PeproBlocks {
         VANADIUM_BLOCK = register("vanadium_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
         ZINC_BLOCK = register("zinc_block", new PeproBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(5f, 6f)));
 
-        COMPRESSION_CRAFTING_TABLE = register("compression_crafting_table", new CompressionCraftingTable(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
-        WAX_INJECTOR = register("wax_injector", new WaxInjectorBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
-        WAX_ASSEMBLER = register("wax_assembler", new WaxAssemblerBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
-        SLURRY_COATER = register("slurry_coater", new SlurryCoaterBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
-        STUCCOER = register("stuccoer", new StuccoerBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
-        DEWAXER = register("dewaxer", new DewaxerBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
-        CASTER = register("caster", new CasterBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
-        SHELL_REMOVER = register("shell_remover", new ShellRemoverBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
-        OFFCUTTER = register("offcutter", new OffcutterBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
-        FINISHER = register("finisher", new FinisherBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
-        INSPECTOR = register("inspector", new InspectorBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
+        COMPRESSION_CRAFTING_TABLE = (CompressionCraftingTableBlock) register("compression_crafting_table", new CompressionCraftingTableBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
+        WAX_INJECTOR = (WaxInjectorBlock) register("wax_injector", new WaxInjectorBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
+        WAX_ASSEMBLER = (WaxAssemblerBlock) register("wax_assembler", new WaxAssemblerBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
+        SLURRY_COATER = (SlurryCoaterBlock) register("slurry_coater", new SlurryCoaterBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
+        STUCCOER = (StuccoerBlock) register("stuccoer", new StuccoerBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
+        DEWAXER = (DewaxerBlock) register("dewaxer", new DewaxerBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
+        CASTER = (CasterBlock) register("caster", new CasterBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
+        SHELL_REMOVER = (ShellRemoverBlock) register("shell_remover", new ShellRemoverBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
+        OFFCUTTER = (OffcutterBlock) register("offcutter", new OffcutterBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
+        FINISHER = (FinisherBlock) register("finisher", new FinisherBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
+        INSPECTOR = (InspectorBlock) register("inspector", new InspectorBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
     }
 }

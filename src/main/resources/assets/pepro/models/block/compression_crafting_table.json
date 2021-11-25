@@ -1,12 +1,23 @@
 {
-  "parent": "minecraft:block/cube",
-  "textures": {
-    "particle": "pepro:block/compression_crafting_table_side",
-    "down": "pepro:block/compression_crafting_table_bottom",
-    "up": "pepro:block/compression_crafting_table_top",
-    "north": "pepro:block/compression_crafting_table_front",
-    "east": "pepro:block/compression_crafting_table_side",
-    "south": "pepro:block/compression_crafting_table_side",
-    "west": "pepro:block/compression_crafting_table_side"
-  }
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "pepro:block/compression_crafting_table_side",
+		"1": "pepro:block/compression_crafting_table_top",
+		"2": "pepro:block/compression_crafting_table_bottom",
+		"particle": "pepro:block/compression_crafting_table_side"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#2"}
+			}
+		}
+	]
 }

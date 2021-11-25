@@ -1,19 +1,7 @@
 {
   "variants": {
-    "facing=east": {
-      "model": "pepro:block/compression_crafting_table",
-      "y": 90
-    },
-    "facing=north": {
+    "": {
       "model": "pepro:block/compression_crafting_table"
-    },
-    "facing=south": {
-      "model": "pepro:block/compression_crafting_table",
-      "y": 180
-    },
-    "facing=west": {
-      "model": "pepro:block/compression_crafting_table",
-      "y": 270
     }
   }
 }

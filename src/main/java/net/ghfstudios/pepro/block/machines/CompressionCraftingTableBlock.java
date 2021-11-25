@@ -6,8 +6,8 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
  * @author Leslie-John Richardson
  * @disclaimer null
  */
-public class CompressionCraftingTable extends MachineBlock{
-    public CompressionCraftingTable(FabricBlockSettings settings) {
+public class CompressionCraftingTableBlock extends MachineBlock{
+    public CompressionCraftingTableBlock(FabricBlockSettings settings) {
         super(settings);
     }
 }

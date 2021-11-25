@@ -1,12 +1,24 @@
 {
-  "parent": "minecraft:block/cube",
-  "textures": {
-    "particle": "pepro:block/slurry_coater_side",
-    "down": "pepro:block/slurry_coater_bottom",
-    "up": "pepro:block/slurry_coater_top",
-    "north": "pepro:block/slurry_coater_front",
-    "east": "pepro:block/slurry_coater_side",
-    "south": "pepro:block/slurry_coater_side",
-    "west": "pepro:block/slurry_coater_side"
-  }
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "pepro:block/slurry_coater_top",
+		"1": "pepro:block/slurry_coater_front",
+		"2": "pepro:block/slurry_coater_side",
+		"3": "pepro:block/slurry_coater_bottom",
+		"particle": "pepro:block/slurry_coater_top"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#2"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#2"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#2"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#3"}
+			}
+		}
+	]
 }
