@@ -2,7 +2,6 @@ package net.ghfstudios.pepro.item;
 
 import net.ghfstudios.pepro.entity.projectile.thrown.QuantumDecimatorEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.projectile.thrown.PotionEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.item.ToolMaterial;

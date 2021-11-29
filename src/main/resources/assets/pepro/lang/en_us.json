@@ -189,6 +189,11 @@
   "block.pepro.finisher": "Finisher",
   "block.pepro.inspector": "Inspector",
 
+
+  "item.pepro.generic.tooltip": "This is a Pepro Item!",
+  "item.pepro.generic.tooltip_red": "This is a Pepro Item! in Red",
+
+
   "item.pepro.amethyst": "Amethyst",
   "item.pepro.aquamarine": "Aquamarine",
   "item.pepro.citrine": "Citrine",

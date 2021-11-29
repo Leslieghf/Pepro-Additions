@@ -1,7 +1,9 @@
 package net.ghfstudios.pepro.item;
 
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.ToolMaterial;
+import net.minecraft.world.World;
 
 /**
  * @author Leslie-John Richardson

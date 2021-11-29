@@ -1,12 +1,10 @@
 package net.ghfstudios.pepro.inventory;
 
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.CraftingInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.recipe.RecipeInputProvider;
 import net.minecraft.recipe.RecipeMatcher;
-import net.minecraft.screen.ScreenHandler;
 
 /**
  * @author Leslie-John Richardson

@@ -3,7 +3,9 @@ package net.ghfstudios.pepro.item;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.ghfstudios.pepro.block.PeproBlock;
 import net.ghfstudios.pepro.block.PeproBlocks;
-import net.minecraft.item.*;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
