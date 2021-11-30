@@ -4,6 +4,7 @@ import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
 import net.ghfstudios.pepro.block.conduit.ConduitBlock;
 import net.ghfstudios.pepro.block.machines.*;
+import net.minecraft.block.Block;
 import net.minecraft.block.Material;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
@@ -201,10 +202,14 @@ public class PeproBlocks {
     public static final FinisherBlock FINISHER;
     public static final InspectorBlock INSPECTOR;
 
-    public static final PeproBlock CONDUIT;
+    public static final Block CONDUIT;
 
 
     private static PeproBlock register(String id, PeproBlock block) {
+        return Registry.register(Registry.BLOCK, new Identifier("pepro", id), block);
+    }
+
+    private static Block register(String id, Block block) {
         return Registry.register(Registry.BLOCK, new Identifier("pepro", id), block);
     }
 

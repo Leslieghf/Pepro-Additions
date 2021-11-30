@@ -1,13 +1,8 @@
 package net.ghfstudios.pepro.block.entity;
 
-import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
-import net.ghfstudios.pepro.block.PeproBlock;
 import net.ghfstudios.pepro.block.PeproBlocks;
-import net.ghfstudios.pepro.block.machines.WaxInjectorBlock;
-import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 
 /**
@@ -15,9 +10,9 @@ import net.minecraft.util.registry.Registry;
  * @disclaimer null
  */
 public class PeproBlockEntities {
-    public static BlockEntityType<DemoBlockEntity> DEMO_BLOCK_ENTITY;
+    public static BlockEntityType<ConduitBlockEntity> CONDUIT_BLOCK_ENTITY;
 
     static {
-        DEMO_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, "pepro:demo_block_entity", FabricBlockEntityTypeBuilder.create(DemoBlockEntity::new, PeproBlocks.DEV_MEASURE_GENERIC).build(null));
+        CONDUIT_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, "pepro:conduit_block_entity", FabricBlockEntityTypeBuilder.create(ConduitBlockEntity::new, PeproBlocks.CONDUIT).build(null));
     }
 }

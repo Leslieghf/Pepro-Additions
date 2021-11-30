@@ -3,6 +3,7 @@ package net.ghfstudios.pepro.item;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.ghfstudios.pepro.block.PeproBlock;
 import net.ghfstudios.pepro.block.PeproBlocks;
+import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -348,6 +349,10 @@ public class PeproItems {
         return Registry.register(Registry.ITEM, Registry.BLOCK.getId(block), new PeproBlockItem(block, (new PeproItem.Settings()).group(group)));
     }
 
+    private static PeproBlockItem register(Block block, ItemGroup group) {
+        return Registry.register(Registry.ITEM, Registry.BLOCK.getId(block), new PeproBlockItem(block, (new PeproItem.Settings()).group(group)));
+    }
+
     private static PeproItem register(String id, PeproItem item) {
         return Registry.register(Registry.ITEM, new Identifier("pepro", id), item);
     }
@@ -551,7 +556,7 @@ public class PeproItems {
         FINISHER = register(PeproBlocks.FINISHER, ItemGroup.BUILDING_BLOCKS);
         INSPECTOR = register(PeproBlocks.INSPECTOR, ItemGroup.BUILDING_BLOCKS);
 
-        CONDUIT = register(PeproBlocks.CONDUIT, ItemGroup.BUILDING_BLOCKS);
+        CONDUIT = register((Block) PeproBlocks.CONDUIT, ItemGroup.BUILDING_BLOCKS);
 
 
 

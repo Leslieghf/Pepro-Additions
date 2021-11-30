@@ -10,7 +10,7 @@ import net.minecraft.world.World;
  * @author Leslie-John Richardson
  * @disclaimer null
  */
-public class DemoBlockEntity extends BlockEntity {
+public class ConduitBlockEntity extends BlockEntity {
 
     // Store the current value of the number
     private int lifetime = 0;
@@ -18,11 +18,11 @@ public class DemoBlockEntity extends BlockEntity {
     public float electricCharge = 1024.0f;    //Watts
 
 
-    public DemoBlockEntity(BlockPos pos, BlockState state) {
-        super(PeproBlockEntities.DEMO_BLOCK_ENTITY, pos, state);
+    public ConduitBlockEntity(BlockPos pos, BlockState state) {
+        super(PeproBlockEntities.CONDUIT_BLOCK_ENTITY, pos, state);
     }
 
-    public static void tick(World world, BlockPos pos, BlockState state, DemoBlockEntity be) {
+    public static void tick(World world, BlockPos pos, BlockState state, ConduitBlockEntity be) {
         be.lifetime++;
 
     }

@@ -1,6 +1,6 @@
 package net.ghfstudios.pepro.block.machines;
 
-import net.ghfstudios.pepro.block.entity.DemoBlockEntity;
+import net.ghfstudios.pepro.block.entity.ConduitBlockEntity;
 import net.ghfstudios.pepro.block.entity.PeproBlockEntities;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
@@ -20,7 +20,7 @@ public class DemoBlock extends BlockWithEntity implements BlockEntityProvider {
 
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new DemoBlockEntity(pos, state);
+        return new ConduitBlockEntity(pos, state);
     }
 
     @Override
@@ -30,6 +30,6 @@ public class DemoBlock extends BlockWithEntity implements BlockEntityProvider {
     }
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        return checkType(type, PeproBlockEntities.DEMO_BLOCK_ENTITY, (world1, pos, state1, be) -> DemoBlockEntity.tick(world1, pos, state1, be));
+        return checkType(type, PeproBlockEntities.CONDUIT_BLOCK_ENTITY, (world1, pos, state1, be) -> ConduitBlockEntity.tick(world1, pos, state1, be));
     }
 }
