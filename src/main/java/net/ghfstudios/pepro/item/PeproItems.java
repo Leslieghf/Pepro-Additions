@@ -206,6 +206,8 @@ public class PeproItems {
     public static final BlockItem FINISHER;
     public static final BlockItem INSPECTOR;
 
+    public static final BlockItem CONDUIT;
+
 
 
 
@@ -548,6 +550,8 @@ public class PeproItems {
         OFFCUTTER = register(PeproBlocks.OFFCUTTER, ItemGroup.BUILDING_BLOCKS);
         FINISHER = register(PeproBlocks.FINISHER, ItemGroup.BUILDING_BLOCKS);
         INSPECTOR = register(PeproBlocks.INSPECTOR, ItemGroup.BUILDING_BLOCKS);
+
+        CONDUIT = register(PeproBlocks.CONDUIT, ItemGroup.BUILDING_BLOCKS);
 
 
 

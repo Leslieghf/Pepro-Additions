@@ -1,5 +1,5 @@
 {
-	"credit": "Made with Blockbench",
+	"credit": "Made by Leslie-John Richardson with Blockbench",
 	"parent": "minecraft:block/cube",
 	"textures": {
 		"0": "pepro:block/compression_crafting_table_side",

@@ -18,6 +18,6 @@ public class PeproBlockEntities {
     public static BlockEntityType<DemoBlockEntity> DEMO_BLOCK_ENTITY;
 
     static {
-        DEMO_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, "pepro:demo_block_entity", FabricBlockEntityTypeBuilder.create(DemoBlockEntity::new, DEMO_BLOCK).build(null));
+        DEMO_BLOCK_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, "pepro:demo_block_entity", FabricBlockEntityTypeBuilder.create(DemoBlockEntity::new, PeproBlocks.DEV_MEASURE_GENERIC).build(null));
     }
 }

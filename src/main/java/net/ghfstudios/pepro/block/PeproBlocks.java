@@ -2,6 +2,7 @@ package net.ghfstudios.pepro.block;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.tool.attribute.v1.FabricToolTags;
+import net.ghfstudios.pepro.block.conduit.ConduitBlock;
 import net.ghfstudios.pepro.block.machines.*;
 import net.minecraft.block.Material;
 import net.minecraft.sound.BlockSoundGroup;
@@ -200,6 +201,8 @@ public class PeproBlocks {
     public static final FinisherBlock FINISHER;
     public static final InspectorBlock INSPECTOR;
 
+    public static final PeproBlock CONDUIT;
+
 
     private static PeproBlock register(String id, PeproBlock block) {
         return Registry.register(Registry.BLOCK, new Identifier("pepro", id), block);
@@ -395,5 +398,7 @@ public class PeproBlocks {
         OFFCUTTER = (OffcutterBlock) register("offcutter", new OffcutterBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
         FINISHER = (FinisherBlock) register("finisher", new FinisherBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
         INSPECTOR = (InspectorBlock) register("inspector", new InspectorBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(4.5f, 3f)));
+
+        CONDUIT = register("conduit", new ConduitBlock(FabricBlockSettings.of(Material.METAL).breakByTool(FabricToolTags.PICKAXES, 2).requiresTool().strength(1.5f, 3f).nonOpaque().luminance((state) -> 8).sounds(BlockSoundGroup.METAL)));
     }
 }

@@ -189,6 +189,8 @@
   "block.pepro.finisher": "Finisher",
   "block.pepro.inspector": "Inspector",
 
+  "block.pepro.conduit": "Conduit",
+
 
   "item.pepro.generic.tooltip": "This is a Pepro Item!",
   "item.pepro.generic.tooltip_red": "This is a Pepro Item! in Red",
