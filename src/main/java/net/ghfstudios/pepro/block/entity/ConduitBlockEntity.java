@@ -50,6 +50,6 @@ public class ConduitBlockEntity extends BlockEntity {
     }
 
     public void changeNeighbourNbt() {
-        //Todo: Implement changeNeighbourNbt()  Tip: Get BlockEntity, call changeNbt(), Profit!
+        //Todo: Implement changeNeighbourNbt()  Tip: Get BlockEntity, call changeNbt(), Profit! Maybe just @Override readNbt() and writeNbt() as abstract methods in PeproBlockWithEntity
     }
 }

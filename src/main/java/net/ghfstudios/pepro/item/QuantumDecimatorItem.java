@@ -22,7 +22,7 @@ public class QuantumDecimatorItem extends PeproHammerItem{
 
     @Override
     public ActionResult useOnBlock(ItemUsageContext context) {
-        //Todo
+        //Todo: Spawn lightning bolt
         return super.useOnBlock(context);
     }
 

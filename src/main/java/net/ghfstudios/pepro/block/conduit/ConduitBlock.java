@@ -22,6 +22,7 @@ import org.jetbrains.annotations.Nullable;
  * @author Leslie-John Richardson
  * @disclaimer null
  */
+//Todo: Move Blockstate Cases to ConduitBlock code
 public class ConduitBlock extends BlockWithEntity implements BlockEntityProvider {
     public ConduitBlock(FabricBlockSettings settings) {
         super(settings);
@@ -150,6 +151,7 @@ public class ConduitBlock extends BlockWithEntity implements BlockEntityProvider
     
     @Override
     public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+        //Todo: Fix this shit
         super.onBreak(world, pos, state, player);
 
         BlockPos remotePos;
@@ -214,5 +216,5 @@ public class ConduitBlock extends BlockWithEntity implements BlockEntityProvider
     }
 
 
-    //Todo: Add beacon Beam as "conduit beam" inside conduit
+    //Todo: Add beacon Beam as "conduit beam" inside conduit, Beacons as transmitters, Something else as receiver
 }
