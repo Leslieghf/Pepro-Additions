@@ -50,6 +50,6 @@ public class ConduitBlockEntity extends BlockEntity {
     }
 
     public void changeNeighbourNbt() {
-        //Todo: Implement
+        //Todo: Implement changeNeighbourNbt()  Tip: Get BlockEntity, call changeNbt(), Profit!
     }
 }
