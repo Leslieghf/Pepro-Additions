@@ -1,7 +1,7 @@
 package net.ghfstudios.pepro.block.entity;
 
+import net.ghfstudios.pepro.block.uts.UTSType;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -10,12 +10,11 @@ import net.minecraft.world.World;
  * @author Leslie-John Richardson
  * @disclaimer null
  */
-public class ConduitBlockEntity extends BlockEntity {
+public class ConduitBlockEntity extends UTSTraderBlockEntity {
 
     // Store the current value of the number
-    private int lifetime = 0;
-    public float electricCapacity = 1024.0f;    //Watts
-    public float electricCharge = 1024.0f;    //Watts
+    public float transferVelocity = 230.0f;           //Volt
+    public float transferCapacity = 16.0f;    //Amps
 
 
     public ConduitBlockEntity(BlockPos pos, BlockState state) {
@@ -23,8 +22,7 @@ public class ConduitBlockEntity extends BlockEntity {
     }
 
     public static void tick(World world, BlockPos pos, BlockState state, ConduitBlockEntity be) {
-        be.lifetime++;
-
+        be.transferVelocity++;
     }
 
     // Serialize the BlockEntity
@@ -33,9 +31,9 @@ public class ConduitBlockEntity extends BlockEntity {
         super.writeNbt(tag);
 
         // Save the current value of the number to the tag
-        tag.putInt("lifetime", lifetime);
-        tag.putFloat("electricCapacity", electricCapacity);
-        tag.putFloat("electricCharge", electricCharge);
+        tag.putFloat("transferVelocity", transferVelocity);
+        tag.putFloat("transferCapacity", transferCapacity);
+        tag.putIntArray("transferTypes", transferTypes);
 
         return tag;
     }
@@ -44,12 +42,13 @@ public class ConduitBlockEntity extends BlockEntity {
     @Override
     public void readNbt(NbtCompound tag) {
         super.readNbt(tag);
-        lifetime = tag.getInt("lifetime");
-        electricCapacity = tag.getFloat("electricCapacity");
-        electricCharge = tag.getFloat("electricCharge");
+        transferVelocity = tag.getInt("transferVelocity");
+        transferCapacity = tag.getFloat("transferCapacity");
+        transferTypes = tag.getIntArray("transferTypes");
     }
 
-    public void changeNeighbourNbt() {
-        //Todo: Implement changeNeighbourNbt()  Tip: Get BlockEntity, call changeNbt(), Profit! Maybe just @Override readNbt() and writeNbt() as abstract methods in PeproBlockWithEntity
+    @Override
+    public void update() {
+
     }
 }

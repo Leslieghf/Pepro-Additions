@@ -3,20 +3,29 @@ package net.ghfstudios.pepro.block.conduit;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.ghfstudios.pepro.block.entity.ConduitBlockEntity;
 import net.ghfstudios.pepro.block.entity.PeproBlockEntities;
+import net.ghfstudios.pepro.block.entity.UTSBlockEntity;
+import net.ghfstudios.pepro.block.entity.UTSConsumerBlockEntity;
+import net.ghfstudios.pepro.block.uts.UTSType;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.Properties;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3i;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Objects;
 
 /**
  * @author Leslie-John Richardson
@@ -84,7 +93,7 @@ public class ConduitBlock extends BlockWithEntity implements BlockEntityProvider
             remoteBlockEntityType = remoteBlockEntity.getType();
             if (localBlockEntityType.equals(remoteBlockEntityType)) {
                 world.setBlockState(pos, world.getBlockState(pos).with(Properties.NORTH, true));
-                world.setBlockState(remotePos, world.getBlockState(remotePos).with(Properties.SOUTH, true));
+                world.setBlockState(remotePos, world.getBlockState(pos).with(Properties.SOUTH, true));
             }
         }
 
@@ -165,7 +174,7 @@ public class ConduitBlock extends BlockWithEntity implements BlockEntityProvider
         if ( remoteBlockEntity !=null) {
             remoteBlockEntityType = remoteBlockEntity.getType();
             if (remoteBlockEntityType.equals(localBlockEntityType)) {
-                world.setBlockState(remotePos, world.getBlockState(remotePos).with(Properties.SOUTH, true));
+                world.setBlockState(remotePos, world.getBlockState(remotePos).with(Properties.SOUTH, false));
             }
         }
 
@@ -174,7 +183,7 @@ public class ConduitBlock extends BlockWithEntity implements BlockEntityProvider
         if ( remoteBlockEntity !=null) {
             remoteBlockEntityType = remoteBlockEntity.getType();
             if (remoteBlockEntityType.equals(localBlockEntityType)) {
-                world.setBlockState(remotePos, world.getBlockState(remotePos).with(Properties.WEST, true));
+                world.setBlockState(remotePos, world.getBlockState(remotePos).with(Properties.WEST, false));
             }
         }
 
@@ -183,7 +192,7 @@ public class ConduitBlock extends BlockWithEntity implements BlockEntityProvider
         if ( remoteBlockEntity !=null) {
             remoteBlockEntityType = remoteBlockEntity.getType();
             if (remoteBlockEntityType.equals(localBlockEntityType)) {
-                world.setBlockState(remotePos, world.getBlockState(remotePos).with(Properties.NORTH, true));
+                world.setBlockState(remotePos, world.getBlockState(remotePos).with(Properties.NORTH, false));
             }
         }
 
@@ -192,7 +201,7 @@ public class ConduitBlock extends BlockWithEntity implements BlockEntityProvider
         if ( remoteBlockEntity !=null) {
             remoteBlockEntityType = remoteBlockEntity.getType();
             if (remoteBlockEntityType.equals(localBlockEntityType)) {
-                world.setBlockState(remotePos, world.getBlockState(remotePos).with(Properties.EAST, true));
+                world.setBlockState(remotePos, world.getBlockState(remotePos).with(Properties.EAST, false));
             }
         }
 
@@ -201,7 +210,7 @@ public class ConduitBlock extends BlockWithEntity implements BlockEntityProvider
         if ( remoteBlockEntity !=null) {
             remoteBlockEntityType = remoteBlockEntity.getType();
             if (remoteBlockEntityType.equals(localBlockEntityType)) {
-                world.setBlockState(remotePos, world.getBlockState(remotePos).with(Properties.DOWN, true));
+                world.setBlockState(remotePos, world.getBlockState(remotePos).with(Properties.DOWN, false));
             }
         }
 
@@ -210,9 +219,124 @@ public class ConduitBlock extends BlockWithEntity implements BlockEntityProvider
         if ( remoteBlockEntity !=null) {
             remoteBlockEntityType = remoteBlockEntity.getType();
             if (remoteBlockEntityType.equals(localBlockEntityType)) {
-                world.setBlockState(remotePos, world.getBlockState(remotePos).with(Properties.UP, true));
+                world.setBlockState(remotePos, world.getBlockState(remotePos).with(Properties.UP, false));
             }
         }
+    }
+
+    @Override
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+        if (player.getEquippedStack(EquipmentSlot.MAINHAND).isOf(Items.REDSTONE) && hand.equals(Hand.MAIN_HAND)) {
+            sendCharge(state, world, pos, player, hand, hit, 1024);
+            return ActionResult.CONSUME;
+        }
+        return ActionResult.FAIL;
+    }
+
+    private void sendCharge(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit, int charge) {
+        BlockPos nearestConsumerPos = getNearestConsumer(state, world, pos, ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity, ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity);  //NORTH
+        ((UTSConsumerBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).electricCharge += charge;
+        ((UTSBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).update();
+    }
+
+    private BlockPos getNearestConsumer(BlockState state, World world, BlockPos pos, float linkMaxVelocity, float linkMaxCapacity) {
+        if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).isOfType(UTSType.TRADER)) {
+            if (world.getBlockState(pos).get(Properties.NORTH)) {
+                if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity < linkMaxVelocity) {
+                    linkMaxVelocity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity;
+                }
+                if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity < linkMaxCapacity) {
+                    linkMaxCapacity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity;
+                }
+                BlockPos temp = getNearestConsumer(state, world, pos.add(0, 0, -1), linkMaxVelocity, linkMaxCapacity);
+                if (temp==null) {
+                    System.out.println("HIT DEAD END AT " + pos);
+                    return pos;
+                }
+                return temp;
+            }
+            else if (world.getBlockState(pos).get(Properties.EAST)) {
+                if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity < linkMaxVelocity) {
+                    linkMaxVelocity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity;
+                }
+                if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity < linkMaxCapacity) {
+                    linkMaxCapacity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity;
+                }
+                BlockPos temp = getNearestConsumer(state, world, pos.add(1, 0, 0), linkMaxVelocity, linkMaxCapacity);
+                if (temp==null) {
+                    System.out.println("HIT DEAD END AT " + pos);
+                    return pos;
+                }
+                return temp;
+            }
+            else if (world.getBlockState(pos).get(Properties.SOUTH)) {
+                if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity < linkMaxVelocity) {
+                    linkMaxVelocity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity;
+                }
+                if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity < linkMaxCapacity) {
+                    linkMaxCapacity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity;
+                }
+                BlockPos temp = getNearestConsumer(state, world, pos.add(0, 0, 1), linkMaxVelocity, linkMaxCapacity);
+                if (temp==null) {
+                    System.out.println("HIT DEAD END AT " + pos);
+                    return pos;
+                }
+                return temp;
+            }
+            else if (world.getBlockState(pos).get(Properties.WEST)) {
+                if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity < linkMaxVelocity) {
+                    linkMaxVelocity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity;
+                }
+                if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity < linkMaxCapacity) {
+                    linkMaxCapacity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity;
+                }
+                BlockPos temp = getNearestConsumer(state, world, pos.add(-1, 0, 0), linkMaxVelocity, linkMaxCapacity);
+                if (temp==null) {
+                    System.out.println("HIT DEAD END AT " + pos);
+                    return pos;
+                }
+                return temp;
+            }
+            else if (world.getBlockState(pos).get(Properties.UP)) {
+                if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity < linkMaxVelocity) {
+                    linkMaxVelocity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity;
+                }
+                if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity < linkMaxCapacity) {
+                    linkMaxCapacity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity;
+                }
+                BlockPos temp = getNearestConsumer(state, world, pos.add(0, 1, 0), linkMaxVelocity, linkMaxCapacity);
+                if (temp==null) {
+                    System.out.println("HIT DEAD END AT " + pos);
+                    return pos;
+                }
+                return temp;
+            }
+            else if (world.getBlockState(pos).get(Properties.DOWN)) {
+                if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity < linkMaxVelocity) {
+                    linkMaxVelocity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity;
+                }
+                if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity < linkMaxCapacity) {
+                    linkMaxCapacity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity;
+                }
+                BlockPos temp = getNearestConsumer(state, world, pos.add(0, -1, 0), linkMaxVelocity, linkMaxCapacity);
+                if (temp==null) {
+                    System.out.println("HIT DEAD END AT " + pos);
+                    return pos;
+                }
+                return temp;
+            }
+        }
+
+        if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).isOfType(UTSType.CONSUMER)) {
+            System.out.println("FOUND CONSUMER AT " + pos.toString());
+            return pos;
+        }
+
+        return null;
+    }
+
+    private ConduitBlockEntity getBlockEntity(World world, BlockPos pos) {
+        return (ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos));
     }
 
 
