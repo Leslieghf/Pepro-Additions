@@ -1,11 +1,13 @@
 package net.ghfstudios.pepro.block.conduit;
 
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
+import net.ghfstudios.pepro.block.PeproBlockWithEntity;
 import net.ghfstudios.pepro.block.entity.ConduitBlockEntity;
 import net.ghfstudios.pepro.block.entity.PeproBlockEntities;
 import net.ghfstudios.pepro.block.entity.UTSBlockEntity;
 import net.ghfstudios.pepro.block.entity.UTSConsumerBlockEntity;
-import net.ghfstudios.pepro.block.uts.UTSType;
+import net.ghfstudios.pepro.util.uts.UTS;
+import net.ghfstudios.pepro.util.uts.UTSType;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -31,8 +33,8 @@ import java.util.Objects;
  * @author Leslie-John Richardson
  * @disclaimer null
  */
-//Todo: Move Blockstate Cases to ConduitBlock code
-public class ConduitBlock extends BlockWithEntity implements BlockEntityProvider {
+//Todo: Move Blockstate Cases to ConduitBlock code: Set the DirectionProperty via code, DirectionProperty only directly controls model application, basically blockstate.json as model interface for BLock class
+public class ConduitBlock extends PeproBlockWithEntity implements BlockEntityProvider {
     public ConduitBlock(FabricBlockSettings settings) {
         super(settings);
     }
@@ -47,6 +49,7 @@ public class ConduitBlock extends BlockWithEntity implements BlockEntityProvider
         // With inheriting from BlockWithEntity this defaults to INVISIBLE, so we need to change that!
         return BlockRenderType.MODEL;
     }
+
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
         return checkType(type, PeproBlockEntities.CONDUIT_BLOCK_ENTITY, ConduitBlockEntity::tick);
@@ -93,7 +96,7 @@ public class ConduitBlock extends BlockWithEntity implements BlockEntityProvider
             remoteBlockEntityType = remoteBlockEntity.getType();
             if (localBlockEntityType.equals(remoteBlockEntityType)) {
                 world.setBlockState(pos, world.getBlockState(pos).with(Properties.NORTH, true));
-                world.setBlockState(remotePos, world.getBlockState(pos).with(Properties.SOUTH, true));
+                world.setBlockState(remotePos, world.getBlockState(remotePos).with(Properties.SOUTH, true));
             }
         }
 
@@ -160,7 +163,6 @@ public class ConduitBlock extends BlockWithEntity implements BlockEntityProvider
     
     @Override
     public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
-        //Todo: Fix this shit
         super.onBreak(world, pos, state, player);
 
         BlockPos remotePos;
@@ -234,7 +236,7 @@ public class ConduitBlock extends BlockWithEntity implements BlockEntityProvider
     }
 
     private void sendCharge(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit, int charge) {
-        BlockPos nearestConsumerPos = getNearestConsumer(state, world, pos, ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity, ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity);  //NORTH
+        BlockPos nearestConsumerPos = UTS.getConnectedConsumers(world, pos)[0].position;  //NORTH
         ((UTSConsumerBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).electricCharge += charge;
         ((UTSBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).update();
     }
@@ -322,7 +324,7 @@ public class ConduitBlock extends BlockWithEntity implements BlockEntityProvider
                 if (temp==null) {
                     System.out.println("HIT DEAD END AT " + pos);
                     return pos;
-                }
+                }   //Todo: Fix StackOverflow(Right-Click Redstone on Conduit, should show some Debug Logs and transfer Electric Charge) with Debug Mode and Breakpoints
                 return temp;
             }
         }

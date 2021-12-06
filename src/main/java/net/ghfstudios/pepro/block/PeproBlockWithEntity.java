@@ -1,20 +1,21 @@
-package net.ghfstudios.pepro.block.machines;
+package net.ghfstudios.pepro.block;
 
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.BlockWithEntity;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.event.listener.GameEventListener;
 import org.jetbrains.annotations.Nullable;
 
 /**
  * @author Leslie-John Richardson
  * @disclaimer null
  */
-public class WaxAssemblerBlock extends MachineBlock{
-    public WaxAssemblerBlock(FabricBlockSettings settings) {
+public abstract class PeproBlockWithEntity extends BlockWithEntity {
+    protected PeproBlockWithEntity(Settings settings) {
         super(settings);
     }
 
@@ -28,5 +29,11 @@ public class WaxAssemblerBlock extends MachineBlock{
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
         return super.getTicker(world, state, type);
+    }
+
+    @Nullable
+    @Override
+    public <T extends BlockEntity> GameEventListener getGameEventListener(World world, T blockEntity) {
+        return super.getGameEventListener(world, blockEntity);
     }
 }

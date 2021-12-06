@@ -1,6 +1,5 @@
 package net.ghfstudios.pepro.block.entity;
 
-import net.ghfstudios.pepro.block.uts.UTSType;
 import net.minecraft.block.BlockState;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.util.math.BlockPos;
@@ -10,6 +9,8 @@ import net.minecraft.world.World;
  * @author Leslie-John Richardson
  * @disclaimer null
  */
+
+//Todo: Refactor ConduitBlockEntity: Move functional methods to ConduitBlock
 public class ConduitBlockEntity extends UTSTraderBlockEntity {
 
     // Store the current value of the number

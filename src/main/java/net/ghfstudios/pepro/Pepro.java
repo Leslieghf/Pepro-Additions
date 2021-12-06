@@ -13,7 +13,6 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 
-//Todo: Add PeproBlockWithEntity and have ConduitBlock extend it
 public class Pepro implements ModInitializer {
 
     public static PeproBlocks peproBlocks;

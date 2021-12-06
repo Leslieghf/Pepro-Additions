@@ -1,4 +1,4 @@
-package net.ghfstudios.pepro.block.uts;
+package net.ghfstudios.pepro.util.uts;
 
 /**
  * @author Leslie-John Richardson

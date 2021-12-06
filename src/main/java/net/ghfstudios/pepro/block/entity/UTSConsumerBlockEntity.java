@@ -1,6 +1,6 @@
 package net.ghfstudios.pepro.block.entity;
 
-import net.ghfstudios.pepro.block.uts.UTSType;
+import net.ghfstudios.pepro.util.uts.UTSType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.nbt.NbtCompound;
