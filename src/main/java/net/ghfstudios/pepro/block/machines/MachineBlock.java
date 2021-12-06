@@ -25,6 +25,7 @@ import org.jetbrains.annotations.Nullable;
  */
 
 //Todo: Create MachineBlock Children's' BlockEntities
+//Todo: Create and extend (PeproUTSCompatibleBlock extends PeproBlockWithEntity) as abstract class MachineBlock
 public abstract class MachineBlock extends PeproBlockWithEntity {
     protected MachineBlock(Settings settings) {
         super(settings);
@@ -51,6 +52,8 @@ public abstract class MachineBlock extends PeproBlockWithEntity {
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
         return super.getTicker(world, state, type);
     }
+
+    //Todo: Add System: List that stores compatible ConduitTransferBlockType for given MachineBlock
 
     @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
