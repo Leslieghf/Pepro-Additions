@@ -237,103 +237,108 @@ public class ConduitBlock extends PeproBlockWithEntity implements BlockEntityPro
 
     private void sendCharge(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit, int charge) {
         BlockPos nearestConsumerPos = UTS.getConnectedConsumers(world, pos)[0].position;  //NORTH
-        ((UTSConsumerBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).electricCharge += charge;
+        //BlockPos nearestConsumerPos = pos.add(0, 1, 0);
+        System.out.println("Checking for consumer @ " + nearestConsumerPos);
+        BlockEntity consumer = UTS.getBlockEntity(world, nearestConsumerPos);
+        ((UTSConsumerBlockEntity) consumer).electricCharge += charge;
         ((UTSBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).update();
     }
 
+    //Todo: Fix MachineBlock blockstate thingy property, maybe rollback to previous commit
+    //Todo: Generify getNearestConsumer to getNearestUTSBlockEntity(transmissionType parameter, default to UTSType.TRADER)
     private BlockPos getNearestConsumer(BlockState state, World world, BlockPos pos, float linkMaxVelocity, float linkMaxCapacity) {
-        if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).isOfType(UTSType.TRADER)) {
-            if (world.getBlockState(pos).get(Properties.NORTH)) {
-                if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity < linkMaxVelocity) {
-                    linkMaxVelocity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity;
+        if (UTS.getBlockEntity(world, pos) instanceof UTSBlockEntity) {
+            System.out.println("Found UTS Block @ " + pos);
+            if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).isOfType(UTSType.TRADER)) {
+                //Todo: Fix cardinal dir cases, case wrap is *presumably* functional
+                if (world.getBlockState(pos).get(Properties.NORTH)) {
+                    //Todo: encapsulate block in "if (UTS.getBlockEntity(world, pos) instanceof UTSBlockEntity)"
+                    if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity < linkMaxVelocity) {
+                        linkMaxVelocity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity;
+                    }
+                    if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity < linkMaxCapacity) {
+                        linkMaxCapacity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity;
+                    }
+                    BlockPos temp = getNearestConsumer(state, world, pos.add(0, 0, -1), linkMaxVelocity, linkMaxCapacity);
+                    if (temp == null) {
+                        System.out.println("HIT DEAD END AT " + pos);
+                        return null;
+                    }
+                    return temp;
+                } else if (world.getBlockState(pos).get(Properties.EAST)) {
+                    if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity < linkMaxVelocity) {
+                        linkMaxVelocity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity;
+                    }
+                    if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity < linkMaxCapacity) {
+                        linkMaxCapacity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity;
+                    }
+                    BlockPos temp = getNearestConsumer(state, world, pos.add(1, 0, 0), linkMaxVelocity, linkMaxCapacity);
+                    if (temp == null) {
+                        System.out.println("HIT DEAD END AT " + pos);
+                        return null;
+                    }
+                    return temp;
+                } else if (world.getBlockState(pos).get(Properties.SOUTH)) {
+                    if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity < linkMaxVelocity) {
+                        linkMaxVelocity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity;
+                    }
+                    if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity < linkMaxCapacity) {
+                        linkMaxCapacity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity;
+                    }
+                    BlockPos temp = getNearestConsumer(state, world, pos.add(0, 0, 1), linkMaxVelocity, linkMaxCapacity);
+                    if (temp == null) {
+                        System.out.println("HIT DEAD END AT " + pos);
+                        return null;
+                    }
+                    return temp;
+                } else if (world.getBlockState(pos).get(Properties.WEST)) {
+                    if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity < linkMaxVelocity) {
+                        linkMaxVelocity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity;
+                    }
+                    if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity < linkMaxCapacity) {
+                        linkMaxCapacity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity;
+                    }
+                    BlockPos temp = getNearestConsumer(state, world, pos.add(-1, 0, 0), linkMaxVelocity, linkMaxCapacity);
+                    if (temp == null) {
+                        System.out.println("HIT DEAD END AT " + pos);
+                        return null;
+                    }
+                    return temp;
+                } else if (world.getBlockState(pos).get(Properties.UP)) {
+                    if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity < linkMaxVelocity) {
+                        linkMaxVelocity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity;
+                    }
+                    if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity < linkMaxCapacity) {
+                        linkMaxCapacity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity;
+                    }
+                    BlockPos temp = getNearestConsumer(state, world, pos.add(0, 1, 0), linkMaxVelocity, linkMaxCapacity);
+                    if (temp == null) {
+                        System.out.println("HIT DEAD END AT " + pos);
+                        return null;
+                    }
+                    return temp;
+                } else if (world.getBlockState(pos).get(Properties.DOWN)) {
+                    if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity < linkMaxVelocity) {
+                        linkMaxVelocity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity;
+                    }
+                    if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity < linkMaxCapacity) {
+                        linkMaxCapacity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity;
+                    }
+                    BlockPos temp = getNearestConsumer(state, world, pos.add(0, -1, 0), linkMaxVelocity, linkMaxCapacity);
+                    if (temp == null) {
+                        System.out.println("HIT DEAD END AT " + pos);
+                        return null;
+                    }
+                    //Todo: Fix StackOverflow(Right-Click Redstone on Conduit, should show some Debug Logs and transfer Electric Charge) with Debug Mode and Breakpoints
+                    return temp;
                 }
-                if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity < linkMaxCapacity) {
-                    linkMaxCapacity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity;
-                }
-                BlockPos temp = getNearestConsumer(state, world, pos.add(0, 0, -1), linkMaxVelocity, linkMaxCapacity);
-                if (temp==null) {
-                    System.out.println("HIT DEAD END AT " + pos);
-                    return pos;
-                }
-                return temp;
             }
-            else if (world.getBlockState(pos).get(Properties.EAST)) {
-                if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity < linkMaxVelocity) {
-                    linkMaxVelocity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity;
-                }
-                if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity < linkMaxCapacity) {
-                    linkMaxCapacity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity;
-                }
-                BlockPos temp = getNearestConsumer(state, world, pos.add(1, 0, 0), linkMaxVelocity, linkMaxCapacity);
-                if (temp==null) {
-                    System.out.println("HIT DEAD END AT " + pos);
-                    return pos;
-                }
-                return temp;
-            }
-            else if (world.getBlockState(pos).get(Properties.SOUTH)) {
-                if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity < linkMaxVelocity) {
-                    linkMaxVelocity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity;
-                }
-                if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity < linkMaxCapacity) {
-                    linkMaxCapacity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity;
-                }
-                BlockPos temp = getNearestConsumer(state, world, pos.add(0, 0, 1), linkMaxVelocity, linkMaxCapacity);
-                if (temp==null) {
-                    System.out.println("HIT DEAD END AT " + pos);
-                    return pos;
-                }
-                return temp;
-            }
-            else if (world.getBlockState(pos).get(Properties.WEST)) {
-                if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity < linkMaxVelocity) {
-                    linkMaxVelocity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity;
-                }
-                if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity < linkMaxCapacity) {
-                    linkMaxCapacity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity;
-                }
-                BlockPos temp = getNearestConsumer(state, world, pos.add(-1, 0, 0), linkMaxVelocity, linkMaxCapacity);
-                if (temp==null) {
-                    System.out.println("HIT DEAD END AT " + pos);
-                    return pos;
-                }
-                return temp;
-            }
-            else if (world.getBlockState(pos).get(Properties.UP)) {
-                if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity < linkMaxVelocity) {
-                    linkMaxVelocity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity;
-                }
-                if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity < linkMaxCapacity) {
-                    linkMaxCapacity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity;
-                }
-                BlockPos temp = getNearestConsumer(state, world, pos.add(0, 1, 0), linkMaxVelocity, linkMaxCapacity);
-                if (temp==null) {
-                    System.out.println("HIT DEAD END AT " + pos);
-                    return pos;
-                }
-                return temp;
-            }
-            else if (world.getBlockState(pos).get(Properties.DOWN)) {
-                if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity < linkMaxVelocity) {
-                    linkMaxVelocity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferVelocity;
-                }
-                if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity < linkMaxCapacity) {
-                    linkMaxCapacity = ((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).transferCapacity;
-                }
-                BlockPos temp = getNearestConsumer(state, world, pos.add(0, -1, 0), linkMaxVelocity, linkMaxCapacity);
-                if (temp==null) {
-                    System.out.println("HIT DEAD END AT " + pos);
-                    return pos;
-                }   //Todo: Fix StackOverflow(Right-Click Redstone on Conduit, should show some Debug Logs and transfer Electric Charge) with Debug Mode and Breakpoints
-                return temp;
+
+            if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).isOfType(UTSType.CONSUMER)) {
+                System.out.println("FOUND CONSUMER AT " + pos.toString());
+                return pos;
             }
         }
-
-        if (((ConduitBlockEntity) Objects.requireNonNull(world.getBlockEntity(pos))).isOfType(UTSType.CONSUMER)) {
-            System.out.println("FOUND CONSUMER AT " + pos.toString());
-            return pos;
-        }
-
         return null;
     }
 

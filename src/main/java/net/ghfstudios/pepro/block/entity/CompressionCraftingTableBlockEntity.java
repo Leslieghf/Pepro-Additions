@@ -23,4 +23,6 @@ public class CompressionCraftingTableBlockEntity extends UTSConsumerBlockEntity{
 
     public static <E extends BlockEntity> void tick(World world, BlockPos blockPos, BlockState blockState, E e) {
     }
+
+
 }
