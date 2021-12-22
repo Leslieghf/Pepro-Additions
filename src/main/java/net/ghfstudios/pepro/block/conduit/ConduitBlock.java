@@ -6,6 +6,7 @@ import net.ghfstudios.pepro.block.entity.ConduitBlockEntity;
 import net.ghfstudios.pepro.block.entity.PeproBlockEntities;
 import net.ghfstudios.pepro.block.entity.UTSBlockEntity;
 import net.ghfstudios.pepro.block.entity.UTSConsumerBlockEntity;
+import net.ghfstudios.pepro.state.property.PeproProperties;
 import net.ghfstudios.pepro.util.uts.UTS;
 import net.ghfstudios.pepro.util.uts.UTSType;
 import net.minecraft.block.*;
@@ -24,17 +25,25 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
  * @author Leslie-John Richardson
  * @disclaimer null
  */
+//Todo: Optimize conduit_hub model
 //Todo: Move Blockstate Cases to ConduitBlock code: Set the DirectionProperty via code, DirectionProperty only directly controls model application, basically blockstate.json as model interface for BLock class
 public class ConduitBlock extends PeproBlockWithEntity implements BlockEntityProvider {
+    protected static final VoxelShape SHAPE = Block.createCuboidShape(4.0D, 4.0D, 4.0D, 12.0D, 12.0D, 12.0D);
+
     public ConduitBlock(FabricBlockSettings settings) {
         super(settings);
     }
@@ -51,6 +60,11 @@ public class ConduitBlock extends PeproBlockWithEntity implements BlockEntityPro
     }
 
     @Override
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return SHAPE;
+    }
+
+    @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
         return checkType(type, PeproBlockEntities.CONDUIT_BLOCK_ENTITY, ConduitBlockEntity::tick);
     }
@@ -58,25 +72,69 @@ public class ConduitBlock extends PeproBlockWithEntity implements BlockEntityPro
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> stateManager) {
         super.appendProperties(stateManager);
-        stateManager.add(Properties.HORIZONTAL_FACING);
         stateManager.add(Properties.NORTH);
         stateManager.add(Properties.EAST);
         stateManager.add(Properties.SOUTH);
         stateManager.add(Properties.WEST);
         stateManager.add(Properties.UP);
         stateManager.add(Properties.DOWN);
+        stateManager.add(PeproProperties.STRAIGHT_X);
+        stateManager.add(PeproProperties.STRAIGHT_Y);
+        stateManager.add(PeproProperties.STRAIGHT_Z);
+        stateManager.add(PeproProperties.HUB);
     }
 
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         return this.getDefaultState()
-                .with(Properties.HORIZONTAL_FACING, ctx.getPlayerFacing().getOpposite())
                 .with(Properties.NORTH, false)
                 .with(Properties.EAST, false)
                 .with(Properties.SOUTH, false)
                 .with(Properties.WEST, false)
                 .with(Properties.UP, false)
-                .with(Properties.DOWN, false);
+                .with(Properties.DOWN, false)
+                .with(PeproProperties.STRAIGHT_X, false)
+                .with(PeproProperties.STRAIGHT_Y, false)
+                .with(PeproProperties.STRAIGHT_Z, false)
+                .with(PeproProperties.HUB, false);
+    }
+
+    private static void updateBlockstate(@NotNull World world, BlockPos pos) {
+        if (world.getBlockState(pos).get(Properties.NORTH) && world.getBlockState(pos).get(Properties.SOUTH)) {
+            if (world.getBlockState(pos).get(Properties.EAST) || world.getBlockState(pos).get(Properties.WEST) || world.getBlockState(pos).get(Properties.UP)|| world.getBlockState(pos).get(Properties.DOWN)) {
+                world.setBlockState(pos, world.getBlockState(pos).with(PeproProperties.STRAIGHT_Z, false));
+            }
+            else {
+                world.setBlockState(pos, world.getBlockState(pos).with(PeproProperties.STRAIGHT_Z, true));
+            }
+        }
+
+        if (world.getBlockState(pos).get(Properties.EAST) && world.getBlockState(pos).get(Properties.WEST)) {
+            if (world.getBlockState(pos).get(Properties.NORTH) || world.getBlockState(pos).get(Properties.SOUTH) || world.getBlockState(pos).get(Properties.UP)|| world.getBlockState(pos).get(Properties.DOWN)) {
+                world.setBlockState(pos, world.getBlockState(pos).with(PeproProperties.STRAIGHT_Z, false));
+            }
+            else {
+                world.setBlockState(pos, world.getBlockState(pos).with(PeproProperties.STRAIGHT_X, true));
+            }
+        }
+
+        if (world.getBlockState(pos).get(Properties.UP) && world.getBlockState(pos).get(Properties.DOWN)) {
+            if (world.getBlockState(pos).get(Properties.NORTH) || world.getBlockState(pos).get(Properties.SOUTH) || world.getBlockState(pos).get(Properties.EAST)|| world.getBlockState(pos).get(Properties.WEST)) {
+                world.setBlockState(pos, world.getBlockState(pos).with(PeproProperties.STRAIGHT_Y, false));
+            }
+            else {
+                world.setBlockState(pos, world.getBlockState(pos).with(PeproProperties.STRAIGHT_Y, true));
+            }
+        }
+
+        if (world.getBlockState(pos).get(PeproProperties.STRAIGHT_X) || world.getBlockState(pos).get(PeproProperties.STRAIGHT_Y) || world.getBlockState(pos).get(PeproProperties.STRAIGHT_Z)) {
+            world.setBlockState(pos, world.getBlockState(pos).with(PeproProperties.HUB, false));
+        }
+
+
+        if (!world.getBlockState(pos).get(PeproProperties.STRAIGHT_X) && !world.getBlockState(pos).get(PeproProperties.STRAIGHT_Y) && !world.getBlockState(pos).get(PeproProperties.STRAIGHT_Z)) {
+            world.setBlockState(pos, world.getBlockState(pos).with(PeproProperties.HUB, true));
+        }
     }
 
     @Override
@@ -87,7 +145,8 @@ public class ConduitBlock extends PeproBlockWithEntity implements BlockEntityPro
         BlockEntity remoteBlockEntity;
         BlockEntityType<?> localBlockEntityType;
         BlockEntityType<?> remoteBlockEntityType;
-        
+        List<BlockPos> remotePosList = new ArrayList<>();
+
         remotePos = pos.add(0, 0, -1);  //NORTH
         localBlockEntity = world.getBlockEntity(pos);
         remoteBlockEntity = world.getBlockEntity(remotePos);
@@ -97,6 +156,7 @@ public class ConduitBlock extends PeproBlockWithEntity implements BlockEntityPro
             if (localBlockEntityType.equals(remoteBlockEntityType)) {
                 world.setBlockState(pos, world.getBlockState(pos).with(Properties.NORTH, true));
                 world.setBlockState(remotePos, world.getBlockState(remotePos).with(Properties.SOUTH, true));
+                remotePosList.add(remotePos);
             }
         }
 
@@ -109,6 +169,7 @@ public class ConduitBlock extends PeproBlockWithEntity implements BlockEntityPro
             if (localBlockEntityType.equals(remoteBlockEntityType)) {
                 world.setBlockState(pos, world.getBlockState(pos).with(Properties.EAST, true));
                 world.setBlockState(remotePos, world.getBlockState(remotePos).with(Properties.WEST, true));
+                remotePosList.add(remotePos);
             }
         }
 
@@ -121,6 +182,7 @@ public class ConduitBlock extends PeproBlockWithEntity implements BlockEntityPro
             if (localBlockEntityType.equals(remoteBlockEntityType)) {
                 world.setBlockState(pos, world.getBlockState(pos).with(Properties.SOUTH, true));
                 world.setBlockState(remotePos, world.getBlockState(remotePos).with(Properties.NORTH, true));
+                remotePosList.add(remotePos);
             }
         }
 
@@ -133,6 +195,7 @@ public class ConduitBlock extends PeproBlockWithEntity implements BlockEntityPro
             if (localBlockEntityType.equals(remoteBlockEntityType)) {
                 world.setBlockState(pos, world.getBlockState(pos).with(Properties.WEST, true));
                 world.setBlockState(remotePos, world.getBlockState(remotePos).with(Properties.EAST, true));
+                remotePosList.add(remotePos);
             }
         }
 
@@ -145,6 +208,7 @@ public class ConduitBlock extends PeproBlockWithEntity implements BlockEntityPro
             if (localBlockEntityType.equals(remoteBlockEntityType)) {
                 world.setBlockState(pos, world.getBlockState(pos).with(Properties.UP, true));
                 world.setBlockState(remotePos, world.getBlockState(remotePos).with(Properties.DOWN, true));
+                remotePosList.add(remotePos);
             }
         }
 
@@ -157,10 +221,16 @@ public class ConduitBlock extends PeproBlockWithEntity implements BlockEntityPro
             if (localBlockEntityType.equals(remoteBlockEntityType)) {
                 world.setBlockState(pos, world.getBlockState(pos).with(Properties.DOWN, true));
                 world.setBlockState(remotePos, world.getBlockState(remotePos).with(Properties.UP, true));
+                remotePosList.add(remotePos);
             }
         }
+
+        updateBlockstate(world, pos);
+        for (BlockPos blockPos : remotePosList) {
+            updateBlockstate(world, blockPos);
+        }
     }
-    
+
     @Override
     public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
         super.onBreak(world, pos, state, player);
@@ -170,6 +240,7 @@ public class ConduitBlock extends PeproBlockWithEntity implements BlockEntityPro
         BlockEntity remoteBlockEntity;
         BlockEntityType<?> remoteBlockEntityType;
         BlockEntityType<?> localBlockEntityType = world.getBlockEntity(pos).getType();
+        List<BlockPos> remotePosList = new ArrayList<>();
 
         remotePos = pos.add(0, 0, -1);  //NORTH
         remoteBlockEntity = world.getBlockEntity(remotePos);
@@ -177,6 +248,7 @@ public class ConduitBlock extends PeproBlockWithEntity implements BlockEntityPro
             remoteBlockEntityType = remoteBlockEntity.getType();
             if (remoteBlockEntityType.equals(localBlockEntityType)) {
                 world.setBlockState(remotePos, world.getBlockState(remotePos).with(Properties.SOUTH, false));
+                remotePosList.add(remotePos);
             }
         }
 
@@ -186,6 +258,7 @@ public class ConduitBlock extends PeproBlockWithEntity implements BlockEntityPro
             remoteBlockEntityType = remoteBlockEntity.getType();
             if (remoteBlockEntityType.equals(localBlockEntityType)) {
                 world.setBlockState(remotePos, world.getBlockState(remotePos).with(Properties.WEST, false));
+                remotePosList.add(remotePos);
             }
         }
 
@@ -195,6 +268,7 @@ public class ConduitBlock extends PeproBlockWithEntity implements BlockEntityPro
             remoteBlockEntityType = remoteBlockEntity.getType();
             if (remoteBlockEntityType.equals(localBlockEntityType)) {
                 world.setBlockState(remotePos, world.getBlockState(remotePos).with(Properties.NORTH, false));
+                remotePosList.add(remotePos);
             }
         }
 
@@ -204,6 +278,7 @@ public class ConduitBlock extends PeproBlockWithEntity implements BlockEntityPro
             remoteBlockEntityType = remoteBlockEntity.getType();
             if (remoteBlockEntityType.equals(localBlockEntityType)) {
                 world.setBlockState(remotePos, world.getBlockState(remotePos).with(Properties.EAST, false));
+                remotePosList.add(remotePos);
             }
         }
 
@@ -213,6 +288,7 @@ public class ConduitBlock extends PeproBlockWithEntity implements BlockEntityPro
             remoteBlockEntityType = remoteBlockEntity.getType();
             if (remoteBlockEntityType.equals(localBlockEntityType)) {
                 world.setBlockState(remotePos, world.getBlockState(remotePos).with(Properties.DOWN, false));
+                remotePosList.add(remotePos);
             }
         }
 
@@ -222,7 +298,13 @@ public class ConduitBlock extends PeproBlockWithEntity implements BlockEntityPro
             remoteBlockEntityType = remoteBlockEntity.getType();
             if (remoteBlockEntityType.equals(localBlockEntityType)) {
                 world.setBlockState(remotePos, world.getBlockState(remotePos).with(Properties.UP, false));
+                remotePosList.add(remotePos);
             }
+        }
+
+        updateBlockstate(world, pos);
+        for (BlockPos blockPos : remotePosList) {
+            updateBlockstate(world, blockPos);
         }
     }
 
